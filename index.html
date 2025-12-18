@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Saredufy Web Plus Academy - AI-Integrated Learning for Real-World Skills. Training in Full Stack Development, Cyber Security, and more.">
+    <meta name="keywords"
+        content="Full Stack Development, Cyber Security, Web Development, IT Training, Internships, Tech Academy">
+    <title>#SWPA - AI-Integrated Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="#home" class="logo">
+                    <img height="60" src="./assets/logo.png" alt="">
+                    <div class="logo-text">
+                        <img height="80" src="./assets/swpa.png" alt="">
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#courses" class="nav-link">Courses</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                    <a href="#founder" class="nav-link">Directors</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="header-actions">
+                    <a href="#courses" class="btn btn-hero hide-mobile">Enroll Now</a>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="navMobile">
+                <a href="#home" class="nav-link-mobile">Home</a>
+                <a href="#about" class="nav-link-mobile">About Us</a>
+                <a href="#courses" class="nav-link-mobile">Courses</a>
+                <a href="#projects" class="nav-link-mobile">Projects</a>
+                <a href="#pricing" class="nav-link-mobile">Pricing</a>
+                <a href="#reviews" class="nav-link-mobile">Reviews</a>
+                <a href="#founder" class="nav-link-mobile">Directors</a>
+                <a href="#contact" class="nav-link-mobile">Contact</a>
+                <!-- <a href="#courses" class="btn btn-hero mobile-cta">Enroll Now</a> -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+            <div class="hero-grid"></div>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <!-- Badge -->
+                <div class="hero-badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" />
+                    </svg>
+                    <span>Empowering the Next Generation of Tech Leaders</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="hero-title">
+                    AI-Integrated Learning <span class="text-gradient">for Real-World Skills</span>
+                </h1>
+
+                <!-- Subtext -->
+                <p class="hero-subtitle">
+                    Saredufy Web Plus Academy delivers AI-integrated learning designed for deep, topic-wise mastery. Personalized training that strengthens every concept through intelligent practice.
+
+
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="#courses" class="btn btn-hero btn-xl">
+                        Enroll Now
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#subscribe" class="btn btn-hero-outline btn-xl">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        Subscription plans
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-value text-gradient">2500+</div>
+                        <div class="stat-label">Students Trained</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value text-gradient">60+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value text-gradient">120+</div>
+                        <div class="stat-label">Interns with Stipend </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value text-gradient">98%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Icons -->
+            <div class="floating-icon floating-icon-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                </svg>
+            </div>
+            <div class="floating-icon floating-icon-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </div>
+            <div class="floating-icon floating-icon-3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-bottom-gradient"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">
+                    Transforming Lives Through <span class="text-gradient">Technology Education</span>
+                </h2>
+                <p class="section-subtitle">
+                    Founded with a vision to bridge the gap between academic knowledge and industry demands,
+                    Saredufy Web Plus Academy has been empowering students with practical, job-ready skills.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <!-- Image Slider -->
+                <div class="about-slider">
+                    <div class="slider-container" id="aboutSlider">
+                        <div class="slide active">
+                            <img src="https://res.cloudinary.com/dqg8ameoa/image/upload/v1757673392/WhatsApp_Image_2025-09-12_at_16.05.57_14690553_jctco8.jpg"
+                                alt="Interactive Workshops">
+                            <div class="slide-overlay">
+                                <p class="slide-title">First Anniversary - 2025</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://res.cloudinary.com/dqg8ameoa/image/upload/v1739512961/IMG-20250214-WA0029_dvd7qa.jpg"
+                                alt="Modern Classrooms">
+                            <div class="slide-overlay">
+                                <p class="slide-title">Office Opening at Tirupati</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://res.cloudinary.com/dqg8ameoa/image/upload/v1746432263/WhatsApp_Image_2025-05-04_at_11.41.54_0f309272_mcmgjz.jpg"
+                                alt="Collaborative Learning">
+                            <div class="slide-overlay">
+                                <p class="slide-title">Directors of #SWPA</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://res.cloudinary.com/dqg8ameoa/image/upload/v1755979476/WhatsApp_Image_2025-08-24_at_00.01.00_592e3c46_ehx7qe.jpg"
+                                alt="Team Projects">
+                            <div class="slide-overlay">
+                                <p class="slide-title">Chief Guests at SIETK</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn slider-prev" id="sliderPrev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <button class="slider-btn slider-next" id="sliderNext">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <div class="slider-glow"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="about-content">
+                    <!-- Mission -->
+                    <div class="info-card">
+                        <div class="info-icon info-icon-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <h3>Our Mission</h3>
+                            <p>To provide accessible, high-quality tech education that transforms beginners
+                                into industry-ready professionals through hands-on learning and real-world projects.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="info-card">
+                        <div class="info-icon info-icon-accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <h3>Our Vision</h3>
+                            <p>To become the leading tech academy in the region, known for producing
+                                skilled developers and programing experts who drive innovation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="info-card">
+                        <div class="info-icon info-icon-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7" />
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <h3>Expert-Led Training</h3>
+                            <p>Our courses are designed and taught by industry professionals with
+                                years of experience in designing & development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Programs</span>
+                <h2 class="section-title">
+                    Courses & <span class="text-gradient">Internships</span>
+                </h2>
+                <p class="section-subtitle">
+                    Choose from our industry-aligned programs designed to give you the skills
+                    and experience needed to excel in the tech industry.
+                </p>
+            </div>
+
+            <!-- Course / Internship Toggle -->
+            <div class="program-toggle">
+                <div class="toggle-indicator"></div>
+
+                <button class="program-btn active" data-type="courses">
+                    Courses
+                </button>
+                <button class="program-btn" data-type="internships">
+                    Internships
+                </button>
+            </div>
+
+
+            <div id="coursesGrid" class="courses-grid">
+                <!-- Full Stack Development -->
+                <div class="course-card" data-color="primary">
+                    <img class="stipend-sticker" src="./assets/Gemini_Generated_Image_24y9z124y9z124y9.png" alt="">
+                    <div class="course-icon course-icon-primary">
+                        <span class="free-trail">1 month FREE trail</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Full Stack Development</h3>
+                    <p class="course-desc">Master modern web development from frontend to backend</p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            6 Months
+                        </span>
+
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 17v4" />
+                            </svg>
+                            Online
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            50hrs LIVE Training
+                        </span>
+
+
+                    </div>
+                    <div class="skill-heading">Core Skills:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹3,599</span><b
+                                style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/Q9HSQeH6VpgbtGhY7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Frontend Card -->
+                <div class="course-card" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <!-- <span class="free-trail">1 month FREE trial</span> -->
+
+                        <!-- Frontend Icon (Browser + Code) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8" />
+                            <path d="M12 17v4" />
+                            <polyline points="9 10 6 12 9 14" />
+                            <polyline points="15 10 18 12 15 14" />
+                        </svg>
+                    </div>
+
+                    <h3 class="course-title">Frontend Development</h3>
+                    <p class="course-desc">
+                        Build responsive, interactive, and modern user interfaces
+                    </p>
+
+                    <div class="course-meta">
+
+                        <!-- Duration -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+
+                        <!-- Mode -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 17v4" />
+                            </svg>
+                            Online
+                        </span>
+
+                        <!-- Training Hours -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            25hrs Training
+                        </span>
+
+                    </div>
+
+                    <div class="skill-heading">Core Skills:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Website Deployment</span>
+                    </div>
+
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹3,899</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+
+                        <a target="_blank" href="https://forms.gle/Q9HSQeH6VpgbtGhY7">
+                            <button class="btn btn-gradient">
+                                Enroll Now
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Backend Card-->
+                <div class="course-card" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <!-- <span class="free-trail">1 month FREE trial</span> -->
+
+                        <!-- Backend Icon (Server + Database) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="7" rx="2" />
+                            <rect x="3" y="14" width="18" height="7" rx="2" />
+                            <line x1="8" y1="7" x2="8" y2="7" />
+                            <line x1="16" y1="7" x2="16" y2="7" />
+                            <line x1="8" y1="18" x2="8" y2="18" />
+                            <line x1="16" y1="18" x2="16" y2="18" />
+                        </svg>
+                    </div>
+
+                    <h3 class="course-title">Backend Development</h3>
+                    <p class="course-desc">
+                        Design secure, scalable backend systems, APIs & DBMS
+                    </p>
+
+                    <div class="course-meta">
+
+                        <!-- Duration -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+
+                        <!-- Mode -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 17v4" />
+                            </svg>
+                            Online
+                        </span>
+
+                        <!-- Training Hours -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            25hrs Training
+                        </span>
+
+                    </div>
+
+                    <div class="skill-heading">Core Skills:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <!-- <span class="skill-tag">REST APIs</span> -->
+                        <span class="skill-tag">Authentication & JWT</span>
+                        <span class="skill-tag">Server Deployment</span>
+                    </div>
+
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹3,999</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+
+                        <a target="_blank" href="https://forms.gle/Q9HSQeH6VpgbtGhY7">
+                            <button class="btn btn-gradient">
+                                Enroll Now
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <!-- UI/UX -->
+                <div class="course-card" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <!-- <span class="free-trail">1 month FREE trial</span> -->
+
+                        <!-- UI/UX Icon (Design + Cursor) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="14" rx="2" />
+                            <path d="M8 21h8" />
+                            <path d="M12 17v4" />
+                            <path d="M6 7h6" />
+                            <path d="M6 11h10" />
+                            <path d="M14 11l3 3" />
+                            <path d="M17 14l-3 3" />
+                        </svg>
+                    </div>
+
+                    <h3 class="course-title">UI / UX Designing</h3>
+                    <p class="course-desc">
+                        Design intuitive, user-centric interfaces with industry-standard tools
+                    </p>
+
+                    <div class="course-meta">
+
+                        <!-- Duration -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+
+                        <!-- Mode -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 17v4" />
+                            </svg>
+                            Online
+                        </span>
+
+                        <!-- Training Hours -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            10hrs Training
+                        </span>
+
+                    </div>
+
+                    <div class="skill-heading">Core Skills:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">UI Principles</span>
+                        <span class="skill-tag">UX Research</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Figma</span>
+                        <!-- <span class="skill-tag">Design Systems</span> -->
+                    </div>
+
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹999</span>
+                            <!-- <b style="margin-left: 5px;">/month</b> -->
+                        </div>
+
+                        <a target="_blank" href="https://forms.gle/Q9HSQeH6VpgbtGhY7">
+                            <button class="btn btn-gradient">
+                                Enroll Now
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="course-card" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <!-- <span class="free-trail">1 month FREE trial</span> -->
+                        <span class="launch-course-soon">Launch Soon</span>
+
+                        <!-- Cyber Security Icon (Shield + Lock) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l7 4v6c0 5-3.5 9.5-7 10-3.5-.5-7-5-7-10V6l7-4z" />
+                            <rect x="9" y="11" width="6" height="5" rx="1" />
+                            <path d="M10 11V9a2 2 0 1 1 4 0v2" />
+                        </svg>
+                    </div>
+
+                    <h3 class="course-title">Cyber Security</h3>
+                    <p class="course-desc">
+                        Learn to secure systems, networks, and applications with defense techniques
+                    </p>
+
+                    <div class="course-meta">
+
+                        <!-- Duration -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            _ Months
+                        </span>
+
+                        <!-- Mode -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 17v4" />
+                            </svg>
+                            Online
+                        </span>
+
+                        <!-- Training Hours -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            __hrs Training
+                        </span>
+
+                    </div>
+
+                    <div class="skill-heading">Core Skills:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Cyber Fundamentals</span>
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Ethical Hacking</span>
+                        <span class="skill-tag">Web Security</span>
+                        <!-- <span class="skill-tag">Threat Analysis</span> -->
+                        <!-- <span class="skill-tag">Security Tools</span> -->
+                    </div>
+
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹_,999</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+
+                        <button class="btn btn-gradient launch-soon">
+                            Launch Soon
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI / ML -->
+                <div class="course-card" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">Launch Soon</span>
+
+                        <!-- AI / ML Icon (Brain + Nodes) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Brain outline -->
+                            <path d="M12 2c2.5 0 4.5 2 4.5 4.5v1" />
+                            <path d="M12 2c-2.5 0-4.5 2-4.5 4.5v1" />
+                            <path d="M7.5 7.5c-2 0-3.5 1.5-3.5 3.5s1.5 3.5 3.5 3.5" />
+                            <path d="M16.5 7.5c2 0 3.5 1.5 3.5 3.5s-1.5 3.5-3.5 3.5" />
+                            <path d="M12 12v8" />
+
+                            <!-- Nodes -->
+                            <circle cx="12" cy="6.5" r="1" />
+                            <circle cx="8" cy="11" r="1" />
+                            <circle cx="16" cy="11" r="1" />
+                            <circle cx="12" cy="18" r="1" />
+                        </svg>
+                    </div>
+
+                    <h3 class="course-title">AI / Machine Learning</h3>
+                    <p class="course-desc">
+                        Learn AI and ML with hands-on projects and real-world use
+                        cases
+                    </p>
+
+                    <div class="course-meta">
+
+                        <!-- Duration -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            _ Months
+                        </span>
+
+                        <!-- Mode -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 17v4" />
+                            </svg>
+                            Online
+                        </span>
+
+                        <!-- Training Hours -->
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            __hrs Training
+                        </span>
+
+                    </div>
+
+                    <div class="skill-heading">Core Skills:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Model Development</span>
+                        <!-- <span class="skill-tag">Model Deployment</span> -->
+                    </div>
+
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹_,999</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+
+                        <button class="btn btn-gradient launch-soon">
+                            Launch Soon
+                        </button>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- INTERNSHIPS GRID -->
+            <div id="internshipsGrid" class="courses-grid" style="display:none;">
+                <div class="course-card">
+                    <h3 class="course-title">Internships</h3>
+                    <p class="course-desc">
+                        Internship programs will be launched soon...
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">
+                    Projects We've <span class="text-gradient">Delivered</span>
+                </h2>
+                <p class="section-subtitle">
+                    A portfolio of real-world web applications and platforms developed under
+                    Saredufy Web Plus Academy.
+                </p>
+            </div>
+
+            <!-- Projects Toggle -->
+            <div class="project-toggle">
+                <div class="project-toggle-indicator"></div>
+
+                <button class="project-btn active" data-type="frontend">
+                    Frontend Projects
+                </button>
+                <button class="project-btn" data-type="fullstack">
+                    Full Stack Projects
+                </button>
+            </div>
+
+
+            <!-- ================= FRONTEND PROJECTS ================= -->
+            <div id="frontendGrid" class="projects-grid">
+
+                <!-- Corporate Website -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="14" rx="2" />
+                            <path d="M7 21h10" />
+                            <path d="M12 17v4" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">Campfire Restaurant</h3>
+                    <p class="project-desc">
+                        Responsive website with modern UI, accessibility, and performance optimization.
+                    </p>
+                    <div class="project-tech">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Educational Website -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">Educational Institute Website</h3>
+                    <p class="project-desc">
+                        Academic website with course listings, admissions, and inquiry management UI.
+                    </p>
+                    <div class="project-tech">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Landing Pages -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="M8 10h8" />
+                            <path d="M8 14h5" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">Iyengar bakery Landing Pages</h3>
+                    <p class="project-desc">
+                        High-conversion landing pages designed for marketing and lead generation.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Tailwind.css</span>
+                    </div>
+                </div>
+
+                <!-- Portfolio -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="7" width="18" height="13" rx="2" />
+                            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">Professional Portfolio Websites</h3>
+                    <p class="project-desc">
+                        Personal and professional portfolios with project showcases and contact integrations.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Tailwind.css</span>
+                    </div>
+                </div>
+
+                <!-- Dashboard UI -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">Admin Dashboard UI Systems</h3>
+                    <p class="project-desc">
+                        Interactive dashboards featuring analytics cards, tables, and filters.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Tailwind.css</span><span>UI/UX - figma</span>
+                    </div>
+                </div>
+
+                <!-- E-Commerce UI -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">E-Commerce Storefront UI</h3>
+                    <p class="project-desc">
+                        Product listing, product detail pages, cart UI, and checkout interfaces.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Tailwind.css</span><span>UI/UX - figma</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= FULL STACK PROJECTS ================= -->
+            <div id="fullstackGrid" class="projects-grid" style="display:none;">
+
+
+                <!-- Exam Seating Arrangement -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="M7 8h10" />
+                            <path d="M7 12h6" />
+                            <path d="M7 16h4" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">AutoSeat Exam Arrangement System</h3>
+                    <p class="project-desc">
+                        Automated exam seating allocation system that assigns students to halls and seats
+                        based on predefined rules and constraints.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+
+
+                <!-- Email Sender -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="M22 6l-10 7L2 6" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">MailFlow Automated Email System</h3>
+                    <p class="project-desc">
+                        Centralized email automation platform for sending bulk, scheduled, and
+                        event-triggered emails with delivery tracking.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>NodeMailer</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- LMS -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">EduFlow Learning Platform</h3>
+                    <p class="project-desc">
+                        Learning management system with course delivery, enrollments, and progress tracking.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Student Management -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">CampusCore Student Management System</h3>
+                    <p class="project-desc">
+                        Student enrollment, profile management, batch tracking, and admin workflows.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Task Management -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="M9 10h6" />
+                            <path d="M9 14h6" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">AssignPro Task Management Platform</h3>
+                    <p class="project-desc">
+                        Assignment creation, submission workflows, and evaluation dashboards.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Authentication -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">SecureAuth Identity & Access System</h3>
+                    <p class="project-desc">
+                        Authentication, authorization, and role-based access control implementation.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>Express.js</span><span>MongoDB</span><span>JWT</span>
+                    </div>
+                </div>
+
+                <!-- Online Exam -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">ExamSphere Online Examination Portal</h3>
+                    <p class="project-desc">
+                        Online exams, automated results processing, and performance analytics.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Hospital -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M12 7v10" />
+                            <path d="M7 12h10" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">SR Hospital Management System</h3>
+                    <p class="project-desc">
+                        Hospital operations platform with patient records, appointments, and admin dashboards.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MySQL</span>
+                    </div>
+                </div>
+
+                <!-- HR -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M5.5 21a6.5 6.5 0 0 1 13 0" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">PeopleTrack HR Management Suite</h3>
+                    <p class="project-desc">
+                        Employee lifecycle management including departments, roles, and records.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MySQL</span>
+                    </div>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">ShopNest E-Commerce Platform</h3>
+                    <p class="project-desc">
+                        Complete e-commerce system with products, cart, orders, and admin control.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Certificate -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="4" y="3" width="16" height="18" rx="2" />
+                            <path d="M8 7h8" />
+                            <path d="M8 11h8" />
+                            <path d="M12 15l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">CertiGen Certificate Automation System</h3>
+                    <p class="project-desc">
+                        Automated certificate generation with unique IDs and downloadable formats.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+
+                <!-- Feedback -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <span class="side-sticker">
+                        <img height="50" src="./assets/verified.png" alt="">
+                    </span>
+                    <h3 class="project-title">VoiceBack Feedback & Review Platform</h3>
+                    <p class="project-desc">
+                        Feedback collection and moderation system with admin dashboards.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span>
+                        <span>Express.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <p style="text-align:center; margin-top:24px;">
+                and several other enterprise-style applications developed & maintained.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">
+                    Development & <span class="text-gradient">Maintenance</span>
+                </h2>
+                <p class="section-subtitle">
+                    Transparent pricing for all your web development and maintenance needs.
+                </p>
+
+
+                <!-- Development Pricing -->
+                <div class="pricing-section">
+                    <h3 class="pricing-section-title">Project Development</h3>
+                    <div class="pricing-grid">
+
+                        <div class="price-card">
+                            <h4 class="price-name">Static Website</h4>
+                            <p class="price-desc">Perfect for portfolios and landing pages</p>
+                            <div class="price-amount">
+                                <span class="price-value-dev text-gradient">₹4,999</span>
+                                <span class="price-period">/project</span>
+                            </div>
+                            <ul class="price-features">
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Up to 5 Pages</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>100% Responsive Design</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Complete SEO Integrated</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Contact & Whatsapp Integration</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>3 Months FREE Maintainance</li>
+                                <li class="excluded"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 6L6 18M6 6l12 12" />
+                                    </svg>Database Integration</li>
+                                <li class="excluded"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 6L6 18M6 6l12 12" />
+                                    </svg>Admin Panel</li>
+                            </ul>
+                            <button class="btn btn-outline" onclick="bookProject('Static Website Project')">
+                                Book Your Project
+                            </button>
+
+                        </div>
+
+                        <div class="price-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4 class="price-name">Full Stack Website</h4>
+                            <p class="price-desc">Complete web application solution</p>
+                            <div class="price-amount">
+                                <span class="price-value-dev text-gradient">₹29,999</span>
+                                <span class="price-period">/project</span>
+                            </div>
+                            <ul class="price-features">
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Unlimited Pages</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>100% Responsive Design</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Advanced SEO</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Database Integration</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Admin Panel</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>Authentication & Authorized panels</li>
+                                <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>6 Months FREE Maintainance</li>
+                            </ul>
+                            <button class="btn btn-hero" onclick="bookProject('Full Stack Website Project')">
+                                Book Your Project
+                            </button>
+                            <!-- <button class="btn btn-hero">Get Started</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- AMC Pricing -->
+            <div class="pricing-section" id="subscribe">
+                <h3 class="pricing-section-title">Annual Maintenance Contract (AMC)</h3>
+
+                <!-- billing Toggle -->
+                <div class="billing-toggle">
+                    <div class="billing-toggle-indicator"></div>
+
+                    <button class="billing-btn active" data-period="monthly">
+                        One-Time / Monthly
+                    </button>
+                    <button class="billing-btn" data-period="yearly">
+                        Yearly (Save 10%)
+                    </button>
+                </div>
+
+
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h4 class="price-name">Static Website AMC</h4>
+                        <p class="price-desc">Maintenance for static sites</p>
+                        <div class="price-amount">
+                            <span class="price-value text-gradient" data-monthly="₹1,499"
+                                data-yearly="₹16,199">₹1,499</span>
+                            <span class="price-period amc-period" data-monthly="/month"
+                                data-yearly="/year">/month</span>
+                        </div>
+                        <ul class="price-features">
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Monthly Backups</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Security Updates</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Content Updates (4/month)</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Uptime Monitoring</li>
+                            <li class="excluded"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>Priority Support</li>
+                            <li class="excluded"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>Performance Optimization</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="subscribeAMC('Static Website AMC')">
+                            Subscribe
+                        </button>
+                        <!-- <button class="btn btn-outline">Subscribe</button> -->
+                    </div>
+
+                    <div class="price-card popular accent">
+                        <div class="popular-badge accent">Most Popular</div>
+                        <h4 class="price-name">Full Stack AMC</h4>
+                        <p class="price-desc">Comprehensive maintenance package</p>
+                        <div class="price-amount">
+                            <span class="price-value text-gradient" data-monthly="₹4,999"
+                                data-yearly="₹53,999">₹4,999</span>
+                            <span class="price-period amc-period" data-monthly="/month"
+                                data-yearly="/year">/month</span>
+                        </div>
+                        <ul class="price-features">
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Weekly Backups</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Security Patches</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Unlimited Content Updates</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>24/7 Monitoring</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Priority Support</li>
+                            <li class="included"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Performance Optimization</li>
+                        </ul>
+                        <button class="btn btn-gradient" onclick="subscribeAMC('Full Stack AMC')">
+                            Subscribe
+                        </button>
+
+                        <!-- <button class="btn btn-gradient">Subscribe</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section reviews">
+        <div class="reviews-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">
+                    What Our <span class="text-gradient">Community Says</span>
+                </h2>
+                <p class="section-subtitle">
+                    Hear from our students and clients about their experience with Saredufy WPA.
+                </p>
+            </div>
+
+            <div class="reviews-container">
+                <!-- Main Review Card -->
+                <div class="review-main">
+                    <div class="review-quote-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z" />
+                            <path
+                                d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+                        </svg>
+                    </div>
+                    <div class="review-card-main">
+                        <div class="review-glow"></div>
+                        <div class="review-content">
+                            <div class="review-stars" id="reviewStars"></div>
+                            <p class="review-text" id="reviewText"></p>
+                            <div class="review-author">
+                                <img class="review-avatar" id="reviewAvatar" src="" alt="">
+                                <div class="review-author-info">
+                                    <h4 class="review-name" id="reviewName"></h4>
+                                    <p class="review-role" id="reviewRole"></p>
+                                </div>
+                                <!-- Company Logo -->
+                                <img class="review-company-logo" id="reviewCompanyLogo" src="" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="review-nav">
+                        <button class="review-nav-btn" id="reviewPrev">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="review-dots" id="reviewDots"></div>
+                        <button class="review-nav-btn" id="reviewNext">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mini Review Cards -->
+                <div class="review-mini-grid" id="reviewMiniGrid"></div>
+                <div class="add-review">
+                    <a target="_blank" href="https://g.page/r/CXaiQ7-c-sXqEAI/review">( Click & Add your review )</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Founder Section -->
+    <section id="founder" class="section founder">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Leadership</span>
+                <h2 class="section-title">
+                    Meet Our <span class="text-gradient">Directors</span>
+                </h2>
+                <p class="section-subtitle">
+                    The vision and leadership behind Saredufy Web Plus Academy.
+                </p>
+            </div>
+
+            <!-- Director 2 -->
+            <div class="founder-card reverse">
+                <div class="founder-image">
+                    <img src="./assets/cofounder.jpg" alt="Rupa Sree D.">
+                </div>
+
+                <img class="brand-sticker-top" height="100" src="./assets/logos/swpaverified.png" alt="">
+                <div class="founder-content">
+                    <h3 class="founder-name">Rupa Sree .D</h3>
+                    <p class="founder-role">Co-Founder & Managing Director</p>
+                    <p class="founder-quote">DIN - 11270036</p>
+                    <hr class="founder-line">
+                    <p class="founder-quote">
+                        “At Saredufy Web Plus Academy, our focus is on structured learning,
+                        mentor-driven guidance, and real-world exposure. We strive to create
+                        a professional learning environment that empowers students to meet
+                        industry standards with confidence.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- Director 1 -->
+            <div class="founder-card">
+                <div class="founder-image">
+                    <img src="./assets/founder.jpg" alt="Saran Velmurugan">
+                </div>
+
+                <img class="brand-sticker-btm" height="100" src="./assets/logos/swpaverified.png" alt="">
+                <div class="founder-content">
+                    <h3 class="founder-name">Saran Velmurugan</h3>
+                    <p class="founder-role">Founder & CEO</p>
+                    <p class="founder-quote">DIN - 10852888</p>
+                    <hr class="founder-line">
+                    <p class="founder-quote">
+                        “Our mission at Saredufy Web Plus Academy is to deliver industry-aligned,
+                        practical, and outcome-driven training. We focus on strong fundamentals,
+                        real-world project exposure, and professional readiness to bridge the gap
+                        between education and industry expectations.”
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">
+                    Let's <span class="text-gradient">Connect</span>
+                </h2>
+                <p class="section-subtitle">
+                    Have questions about our courses or services? We'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3 class="contact-title">Ready to Start Your Tech Journey?</h3>
+                    <p class="contact-desc">
+                        Whether you're looking to enroll in a course, need a custom project,
+                        or have any questions, our team is here to help you succeed.
+                    </p>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-glow form-glow-1"></div>
+                        <div class="form-glow form-glow-2"></div>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+
+                        <a href="javascript:void(0)" class="btn btn-gradient btn-whatsapp" onclick="sendToWhatsApp()">
+                            <img height="30" src="./assets/whatsapp.png" alt="">
+                            Send to WhatsApp
+                        </a>
+
+                    </form>
+
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="form-glow form-glow-1"></div>
+                    <div class="form-glow form-glow-2"></div>
+
+                    <div class="contact-cards">
+                        <!-- Visit Our Office -->
+                        <div class="visit-office">
+                            <h4 class="visit-title">Visit Our Office</h4>
+                            <p class="visit-subtitle">
+                                Saredufy Web Plus Academy – Training & Development Center
+                            </p>
+
+                            <div class="visit-map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31018.587882393622!2d79.442871!3d13.638076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b2d38f6d102f43d%3A0xeac5fa9cbf43a276!2sSaredufy%20Web%20Plus%20Academy%20Private%20Limited!5e0!3m2!1sen!2sin!4v1766043304642!5m2!1sen!2sin"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+
+                            <div class="contact-card-text">
+                                <span class="contact-card-label">Address</span>
+                                <p class="contact-card-value">22-5-97/2, Plot No-81, Kothapalle, Korlagunta, Tirupati,
+                                    Andhra Pradesh, India - 517501.</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+
+                            <a href="tel:+918886200010">
+                                <div class="contact-card-text">
+                                    <span class="contact-card-label">Phone</span>
+                                    <p class="contact-card-value">+91 88862 00010</p>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span class="contact-card-label">Email: </span>
+                                <a href="mailto:hr@saredufywpa.in" class="contact-card-value">hr@saredufywpa.in</a>
+                                <br>
+                                <span class="contact-card-label">Gmail: </span>
+                                <a href="mailto:webplusacademy@gmail.com"
+                                    class="contact-card-value">webplusacademy@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img height="150" src="./assets/logo.png" alt="">
+                        <div class="logo-text logo-text-footer">
+                            <img height="150" src="./assets/swpa.png" alt="">
+                        </div>
+                    </div>
+                    <p align=center>CIN - U85307AP2024PTC116844</p>
+
+                    <p class="footer-desc">
+                        Empowering the next generation of tech professionals with industry-ready skills
+                        through hands-on training and projects.
+                    </p>
+                    <div class="social-links">
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61561544652969&mibextid=ZbWKwL"
+                            class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+
+                        <a target="_blank" href="https://www.instagram.com/saredufy_wpa" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a target="_blank"
+                            href="https://www.linkedin.com/company/saredufy-web-plus-academy-private-limited/"
+                            class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@SaredufyWebPlusAcademy" class="social-link"
+                            aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-links">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#courses">Full Stack Development</a></li>
+                        <li><a href="#courses">Frontend Development</a></li>
+                        <li><a href="#courses">Backend Development</a></li>
+                        <li><a href="#courses">UI / UX Designing</a></li>
+                        <li><a href="#courses">Cyber Security</a></li>
+                        <li><a href="#courses">Ai / Machine Learning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#pricing">Static Website Development</a></li>
+                        <li><a href="#pricing">Full Stack Development</a></li>
+                        <li><a href="#pricing">Website Maintenance</a></li>
+                        <li><a href="#contact">Custom Projects</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Our Projects</a></li>
+                        <li><a href="#founder">Directors</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255, 166, 0, 0.5); margin-top: 1rem;">
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Saredufy Web Plus Academy Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="./privacy.html" target="_blank">Privacy Policy</a>
+                    <a href="./Terms.html" target="_blank">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enrollment Modal -->
+    <div class="modal" id="enrollModal">
+        <div class="modal-overlay" onclick="closeEnrollModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEnrollModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="modal-title">Enroll Now</h3>
+            <p class="modal-desc">Fill in your details and we'll contact you to complete your enrollment.</p>
+
+            <form class="modal-form" id="enrollForm">
+
+                <!-- STEP INDICATOR -->
+                <div class="step-indicator">
+                    <span class="step active">1</span>
+                    <span class="step">2</span>
+                    <span class="step">3</span>
+                </div>
+
+                <!-- ================= STEP 1 ================= -->
+                <div class="form-step active">
+                    <h4 class="form-section-title">Personal Details</h4>
+
+                    <div class="form-grid">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="email" name="email" id="email" placeholder="Email Address" required>
+                        <small class="error-text" id="emailError"></small>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+                        <small class="error-text" id="phoneError"></small>
+
+                        <select id="courseSelect" name="course" class="course-select" required>
+                            <option value="">Select Course</option>
+                            <option>Full Stack Development</option>
+                            <option>Frontend Development</option>
+                            <option>Backend Development</option>
+                            <option>UI / UX Designing</option>
+                            <option>Cyber Security</option>
+                            <option>AI / ML</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn btn-hero next-btn" disabled onclick="nextStep()">
+                        Next →
+                    </button>
+                </div>
+
+                <!-- ================= STEP 2 ================= -->
+                <div class="form-step">
+                    <h4 class="form-section-title">Education Details</h4>
+
+                    <div class="form-grid">
+                        <input type="text" name="qualification" placeholder="Highest Qualification" required>
+                        <input type="text" name="college" placeholder="College / Institute Name" required>
+
+                        <select name="status" required>
+                            <option value="">Current Status</option>
+                            <option>Student</option>
+                            <option>Graduate</option>
+                            <option>Working Professional</option>
+                        </select>
+
+                        <input type="text" name="year_of_passing" placeholder="Year of Passing">
+
+
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-outline-1" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-hero next-btn" disabled onclick="nextStep()">
+                            Next →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ================= STEP 3 ================= -->
+                <div class="form-step">
+                    <h4 class="form-section-title">Registration Payment - ₹199</h4>
+
+                    <div class="payment-box">
+                        <img src="./assets/scanner199.jpeg" alt="UPI QR Code">
+                        <input type="text" name="transaction_id" placeholder="Transaction ID / Reference No" required>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-outline-1" onclick="prevStep()">← Back</button>
+                        <button type="submit" class="btn btn-hero">
+                            Submit & Pay
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+
+            <div class="toast-text">
+                <span class="toast-title" id="toastTitle">Enrollment Submitted</span>
+                <span class="toast-message" id="toastMessage">
+                    Our team will contact you shortly.
+                </span>
+            </div>
+
+            <button class="toast-close" onclick="closeToast()">Close</button>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
