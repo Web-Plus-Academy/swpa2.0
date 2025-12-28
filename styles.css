@@ -1070,16 +1070,16 @@ select {
 .course-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
     margin-bottom: 1rem;
     font-size: 0.875rem;
 }
 
 .stipend-sticker {
     position: absolute;
-    height: 170px;
-    right: 5px;
-    bottom: 180px;
+    height: 100px;
+    right: 10px;
+    top: 10px;
     transform: rotate(-20deg);
     opacity: 0.8;
 }
@@ -1262,6 +1262,392 @@ select {
         font-size: 1.5rem;
     }
 }
+
+
+/*=======================
+Internship
+=======================================*/
+/* ================================
+   INTERNSHIP CARD — COURSE UI MATCH
+================================ */
+
+.internship-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .internship-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.swpa-intern-card {
+  background: radial-gradient(circle at top left, #1b1b1b, #0b0b0b);
+  border: 1px solid rgba(255,165,0,0.15);
+}
+
+/* Icon */
+.swpa-intern-icon-wrap {
+  margin-bottom: 16px;
+}
+
+.swpa-intern-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(255,165,0,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swpa-intern-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #ff9f1c;
+}
+
+/* Title */
+.swpa-intern-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Description */
+.swpa-intern-desc {
+  color: #cfcfcf;
+}
+
+/* Meta Pills */
+.swpa-intern-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.swpa-meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,165,0,0.08);
+  border: 1px solid rgba(255,165,0,0.25);
+  font-size: 13px;
+  color: #fff;
+}
+
+.swpa-meta-pill svg {
+  width: 16px;
+  height: 16px;
+  stroke: #ff9f1c;
+  fill: none;
+}
+
+/* Section Headings */
+.swpa-section-heading {
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+/* Skills */
+.swpa-intern-skills,
+.swpa-intern-eligibility {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Eligibility List with Orange Dots */
+
+.swpa-intern-eligibility-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.swpa-intern-eligibility-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #e5e5e5;
+  line-height: 1.6;
+}
+
+.swpa-intern-eligibility-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  background: #ff9f1c; /* same orange as course card */
+  border-radius: 50%;
+}
+
+
+.swpa-skill-chip {
+  background: #0f172a;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #e5e5e5;
+}
+
+/* Footer */
+.swpa-intern-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.swpa-footer-note {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+/* Button */
+.swpa-btn-primary {
+  background: linear-gradient(135deg, #ff8c00, #ffb347);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+}
+
+
+
+/* ========================================
+   Projects Section
+   /* Launching Soon Container 
+======================================== */
+
+
+.launching-soon-box {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 24px;
+    text-align: center;
+    border-radius: 18px;
+    background: radial-gradient(circle at top left, #1b1b1b, #0b0b0b);
+    border: 1px solid rgba(255,165,0,0.15);
+}
+
+.launching-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255,165,0,0.15);
+    color: #ff9f1c;
+    margin-bottom: 10px;
+}
+
+.launching-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.launching-text {
+    font-size: 14px;
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+/* ===============================
+   EVENTS GRID
+================================ */
+
+.swpa-events-grid {
+  display: grid;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .swpa-events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===============================
+   EVENT CARD
+================================ */
+
+.swpa-event-card {
+  background: radial-gradient(circle at top, #1c1c1c, #0b0b0b);
+  border-radius: 22px;
+  /* overflow: hidden; */
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
+
+/* IMAGE */
+.swpa-event-image {
+    position: relative;
+    height: 200px;
+}
+
+.swpa-event-image img {
+    border-radius: 22px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* IMAGE OVERLAY */
+.swpa-event-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+}
+
+/* PILLS */
+.swpa-event-type,
+.swpa-event-status {
+  position: absolute;
+  bottom: 10px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+  z-index: 2;
+
+  /* 3D look */
+  background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(0,0,0,0.25));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+
+.swpa-event-type {
+  left: 14px;
+  color: #ff9f1c;
+  background: linear-gradient(
+    145deg,
+    rgba(255,165,0,0.35),
+    rgba(255,165,0,0.15)
+  );
+}
+
+.swpa-event-status {
+  right: 14px;
+  color: #22c55e;
+  background: linear-gradient(
+    145deg,
+    rgba(34,197,94,0.35),
+    rgba(34,197,94,0.15)
+  );
+}
+
+
+/* ================= TYPE BADGES ================= */
+
+.swpa-event-type.type-webinar {
+  background: linear-gradient(145deg, rgba(255,165,0,0.35), rgba(255,165,0,0.15));
+  color: #ff9f1c;
+}
+
+.swpa-event-type.type-workshop {
+  background: linear-gradient(145deg, rgba(59,130,246,0.35), rgba(59,130,246,0.15));
+  color: #3b82f6;
+}
+
+.swpa-event-type.type-conference {
+  background: linear-gradient(145deg, rgba(168,85,247,0.35), rgba(168,85,247,0.15));
+  color: #a855f7;
+}
+
+.swpa-event-type.type-meetup {
+  background: linear-gradient(145deg, rgba(34,197,94,0.35), rgba(34,197,94,0.15));
+  color: #22c55e;
+}
+
+.swpa-event-type.type-quizathon {
+  background: linear-gradient(145deg, rgba(239,68,68,0.35), rgba(239,68,68,0.15));
+  color: #ef4444;
+}
+
+
+/* ================= STATUS BADGES ================= */
+
+.swpa-event-status.status-free {
+  background: linear-gradient(145deg, rgba(34,197,94,0.35), rgba(34,197,94,0.15));
+  color: #22c55e;
+}
+
+.swpa-event-status.status-paid {
+  background: linear-gradient(145deg, rgba(245,158,11,0.35), rgba(245,158,11,0.15));
+  color: #f59e0b;
+}
+
+.swpa-event-status.status-registered {
+  background: linear-gradient(145deg, rgba(59,130,246,0.35), rgba(59,130,246,0.15));
+  color: #3b82f6;
+}
+
+.swpa-event-status.status-ended {
+  background: linear-gradient(145deg, rgba(107,114,128,0.35), rgba(107,114,128,0.15));
+  color: #9ca3af;
+}
+
+
+
+/* CONTENT */
+.swpa-event-content {
+  padding: 22px;
+}
+
+.swpa-event-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+/* META */
+.swpa-event-meta {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: #d4d4d4;
+  margin-bottom: 14px;
+}
+
+/* DESCRIPTION */
+.swpa-event-desc {
+  font-size: 14px;
+  color: #bdbdbd;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.swpa-event-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+  color: #bdbdbd;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: not-allowed;
+}
+
 
 /* ========================================
    Projects Section
