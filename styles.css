@@ -1001,7 +1001,7 @@ select {
 .free-trail {
     position: absolute;
     top: -10px;
-    right: 30px;
+    left: 10px;
 
     /* Gold Gradient Plate */
     background: linear-gradient(135deg,
@@ -1012,12 +1012,12 @@ select {
 
     color: #1a1a1a;
     padding: 6px 14px;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 800;
     border-radius: 8px;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-
+    
     /* Depth & Glow */
     box-shadow:
         0 6px 14px rgba(255, 193, 7, 0.45),
