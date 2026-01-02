@@ -317,21 +317,21 @@ const galleryItems = [
     },
     {
         "id": 35,
-        "title": "Name plate est. Founder",
+        "title": "Founder & Co-Founder",
         "category": "Memories",
-        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHVkQILdNlO4w/feedshare-shrink_1280/B56ZTa5bh.GUAo-/0/1738839276410?e=1769040000&v=beta&t=NivWawNkZvhxkGoohdwOo_bFJH8E6rtgkxzlm5PvOxU",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQEnd5lt4Wnr3A/feedshare-shrink_1280/B56ZTUjCNXHoAo-/0/1738732761703?e=1769040000&v=beta&t=vBqfulK937YxT4LZBetQ2y2dYPrCJF0aD1fVEH_PFH8",
         "date": "February 04, 2025",
         "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
-        "aspectRatio": "landscape"
+        "aspectRatio": "portrait"
     },
     {
         "id": 36,
-        "title": "Pooja Program",
+        "title": "Team members - SWPA",
         "category": "Memories",
-        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHpSQFgeNdFDg/feedshare-shrink_2048_1536/B56ZTa5biMHoAs-/0/1738839276362?e=1769040000&v=beta&t=MZCxom9uyWO_7LFiR3GAVPeucivcS74HjfumK7S4dkI",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQG1BeofioziJA/feedshare-shrink_1280/B56ZTa5biRHEAk-/0/1738839276478?e=1769040000&v=beta&t=fx3iqpseZKn065FQVUk739FNaJ5J3PgKBFsvaS3AjwU",
         "date": "February 04, 2025",
         "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
-        "aspectRatio": "landscape"
+        "aspectRatio": "portrait"
     },
     {
         "id": 37,
@@ -342,6 +342,7 @@ const galleryItems = [
         "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
         "aspectRatio": "landscape"
     },
+    
     {
         "id": 38,
         "title": "Team members - SWPA",
@@ -358,19 +359,29 @@ const galleryItems = [
         "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHQuu8iBzWDoA/feedshare-shrink_800/B56ZTa5bhxGoAg-/0/1738839276181?e=1769040000&v=beta&t=5TNTcsV7iKZ5CoIb1xNv4qRPRDUVIiI_yHePdA-doIQ",
         "date": "February 04, 2025",
         "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
-        "aspectRatio": "portrait"
+        "aspectRatio": "landscape"
     },
     {
         "id": 40,
-        "title": "Team members - SWPA",
+        "title": "Name plate est. Founder",
         "category": "Memories",
-        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQG1BeofioziJA/feedshare-shrink_1280/B56ZTa5biRHEAk-/0/1738839276478?e=1769040000&v=beta&t=fx3iqpseZKn065FQVUk739FNaJ5J3PgKBFsvaS3AjwU",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHVkQILdNlO4w/feedshare-shrink_1280/B56ZTa5bh.GUAo-/0/1738839276410?e=1769040000&v=beta&t=NivWawNkZvhxkGoohdwOo_bFJH8E6rtgkxzlm5PvOxU",
         "date": "February 04, 2025",
         "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
-        "aspectRatio": "portrait"
+        "aspectRatio": "landscape"
     },
     {
         "id": 41,
+        "title": "Pooja Program",
+        "category": "Memories",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHpSQFgeNdFDg/feedshare-shrink_2048_1536/B56ZTa5biMHoAs-/0/1738839276362?e=1769040000&v=beta&t=MZCxom9uyWO_7LFiR3GAVPeucivcS74HjfumK7S4dkI",
+        "date": "February 04, 2025",
+        "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
+        "aspectRatio": "landscape"
+    },
+    
+    {
+        "id": 42,
         "title": "Team members - SWPA",
         "category": "Memories",
         "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQEi4g_NA0kJDA/feedshare-shrink_2048_1536/B56ZTa5biaGQAo-/0/1738839276899?e=1769040000&v=beta&t=v8a7CPS7r4QQ66N-oFrQJyaOi8TEa0O9CjqLjyuxe5o",
@@ -379,15 +390,7 @@ const galleryItems = [
         "aspectRatio": "landscape"
     },
     
-    {
-        "id": 42,
-        "title": "Founder & Co-Founder",
-        "category": "Memories",
-        "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQEnd5lt4Wnr3A/feedshare-shrink_1280/B56ZTUjCNXHoAo-/0/1738732761703?e=1769040000&v=beta&t=vBqfulK937YxT4LZBetQ2y2dYPrCJF0aD1fVEH_PFH8",
-        "date": "February 04, 2025",
-        "description": "https://www.linkedin.com/posts/saredufy-web-plus-academy-private-limited_startupsuccess-webplusacademy-newbeginnings-ugcPost-7293220544903094272-mIoc?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADspB7MB_ABXvSsmeuSFL1H1lTvFDIv7hIg",
-        "aspectRatio": "landscape"
-    },
+    
 
 ]
 
