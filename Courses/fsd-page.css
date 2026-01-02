@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Badeen+Display&family=Carattere&family=Outfit:wght@100..900&family=Pacifico&family=Pochaevsk&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Alexandria", sans-serif;
+    background: #0a0a0a;
+    color: #e5e7eb;
+}
+
+section {
+    padding: 20px 20px;
+}
+
+.fsd-hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: radial-gradient(circle at top, #151515, #000);
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg,
+            hsl(210, 100%, 9%) 0%,
+            hsl(0, 0%, 6%) 50%,
+            hsl(23, 100%, 11%) 100%);
+    height: 90vh;
+}
+
+.fsd-hero-container {
+    max-width: 1000px;
+    margin: auto;
+
+}
+
+.fsd-batch-badge {
+    background: rgba(249, 115, 22, 0.2);
+    color: #f97316;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+}
+
+.fsd-main-title {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .fsd-main-title {
+        font-size: 1.75rem;
+    }
+
+    .fsd-hero-section {
+        padding: 30px !important;
+    }
+
+    .fsd-price {
+        font-size: 2.5rem !important;
+    }
+
+    .fsd-final-title {
+        font-size: 1.75rem !important;
+    }
+
+}
+
+.fsd-main-title span,
+.fsd-section-title span,
+.fsd-final-title span {
+    background: linear-gradient(135deg,
+            hsl(24, 95%, 53%),
+            hsl(32, 100%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.fsd-hero-description {
+    max-width: 780px;
+    margin: auto;
+    color: #9ca3af;
+}
+
+.fsd-hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.fsd-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    background: #111;
+
+    font-size: 0.85rem;
+    color: #e5e7eb;
+}
+
+.fsd-meta-item svg {
+    color: #f97316;
+}
+
+
+.fsd-hero-meta span {
+    border: 1px solid #222;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.fsd-price-box {
+    margin: 25px 0;
+}
+
+.fsd-price {
+    font-size: 5rem;
+    background: linear-gradient(135deg,
+            hsl(24, 95%, 53%),
+            hsl(32, 100%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.fsd-price-sub {
+    display: block;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.fsd-primary-cta {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fsd-primary-cta:hover {
+    opacity: 0.9;
+}
+
+.fsd-final-cta-section {
+    background: radial-gradient(circle at top, #141414, #0a0a0a);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.fsd-final-title {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.fsd-final-desc {
+    max-width: 820px;
+    margin: 0 auto 18px;
+    color: #d1d5db;
+}
+
+.fsd-final-highlight {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #22c55e;
+    margin-bottom: 30px;
+}
+
+.fsd-contact-info {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #9ca3af;
+}
+
+.fsd-final-note {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+
+.fsd-section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    font-weight: bold
+}
+
+.fsd-value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.fsd-value-card {
+    background: #111;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #222;
+}
+
+.fsd-value-card h3 {
+    color: #f97316;
+}
+
+.fsd-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.fsd-skill-tags span {
+    background: #111;
+    border: 1px solid #222;
+    padding: 10px 16px;
+    border-radius: 999px;
+}
+
+.fsd-outcome-list {
+    max-width: 800px;
+    margin: auto;
+    list-style: none;
+}
+
+.fsd-outcome-list li {
+    margin-bottom: 14px;
+    padding-left: 26px;
+    position: relative;
+}
+
+.fsd-outcome-list li::before {
+    content: "✔";
+    color: #f97316;
+    position: absolute;
+    left: 0;
+}
+
+.fsd-final-cta-section {
+    text-align: center;
+    background: #0f0f0f;
+}
+
+.fsd-contact-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fsd-footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.fsd-roi-section {
+    background: #0f0f0f;
+}
+
+.fsd-roi-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #9ca3af;
+}
+
+.fsd-roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.fsd-roi-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 28px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fsd-roi-card h3 {
+    margin-bottom: 10px;
+    color: #f97316;
+}
+
+.fsd-roi-highlight {
+    display: block;
+    margin-top: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #22c55e;
+}
+
+.fsd-roi-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(249, 115, 22, 0.12);
+    color: #f97316;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+}
+
+
+/* ===============================
+   PROGRAM ROADMAP BASE
+================================ */
+.fsd-program-roadmap {
+    padding: 50px 35px;
+    background: linear-gradient(135deg,
+            hsl(211, 100%, 6%) 0%,
+            hsl(0, 0%, 6%) 50%,
+            hsl(25, 100%, 6%) 100%);
+    color: #e5e7eb;
+}
+
+
+/* ===============================
+   PHASE STYLING
+================================ */
+.fsd-phase {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+}
+
+.fsd-phase-title {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: #f97316;
+}
+
+.fsd-phase-desc {
+    color: #9ca3af;
+    max-width: 800px;
+    margin-bottom: 36px;
+}
+
+/* ===============================
+   TIMELINE
+================================ */
+.fsd-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+.fsd-timeline-block {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 26px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fsd-timeline-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.fsd-timeline-block h4 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #f97316;
+}
+
+.fsd-timeline-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fsd-timeline-block li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 0.92rem;
+    color: #d1d5db;
+}
+
+.fsd-timeline-block li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #f97316;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* ===============================
+   WEEKLY OUTCOMES
+================================ */
+.fsd-weekly-outcomes {
+    max-width: 900px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+.fsd-sub-title {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+    text-decoration: underline;
+}
+
+.fsd-weekly-outcomes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fsd-weekly-outcomes li {
+    margin-bottom: 12px;
+    color: #d1d5db;
+}
+
+/* ===============================
+   PROJECTS SECTION
+================================ */
+.fsd-projects {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 40px;
+}
+
+.fsd-projects ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fsd-projects li {
+    padding-left: 26px;
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.fsd-projects li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+}
+
+/* ===============================
+   JOB MAPPING
+================================ */
+.fsd-job-mapping {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.fsd-job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.fsd-job-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 28px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fsd-job-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+}
+
+.fsd-job-card h3 {
+    color: #f97316;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.fsd-job-card p {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .fsd-section-title {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+
+    .fsd-hero-description {
+        font-size: 12px;
+    }
+
+    .fsd-phase-title {
+        font-size: 1.4rem;
+    }
+
+    .fsd-projects {
+        padding: 26px;
+    }
+}
+
+/* ===============================
+   PROGRESS BAR
+================================ */
+.fsd-progress-wrapper {
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.fsd-progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 10px;
+}
+
+.fsd-progress-track {
+    height: 10px;
+    background: #1a1a1a;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.fsd-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #f97316, #fb923c);
+    border-radius: 999px;
+    transition: width 1.5s ease;
+}
+
+/* ===============================
+   VERTICAL TIMELINE
+================================ */
+.fsd-vertical-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+/* Vertical line */
+.fsd-vertical-timeline::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+            #f97316,
+            rgba(249, 115, 22, 0.3));
+}
+
+/* Timeline blocks */
+.fsd-vertical-timeline .fsd-timeline-block {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Connector dot */
+.fsd-vertical-timeline .fsd-timeline-block::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 22px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #f97316;
+    box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.15);
+}
+
+/* Hover highlight */
+.fsd-vertical-timeline .fsd-timeline-block:hover::before {
+    box-shadow: 0 0 0 10px rgba(249, 115, 22, 0.25);
+}
+
+/* ===============================
+   MOBILE FIX
+================================ */
+@media (max-width: 768px) {
+    .fsd-vertical-timeline {
+        padding-left: 26px;
+    }
+
+    .fsd-vertical-timeline::before {
+        left: 8px;
+    }
+
+    .fsd-vertical-timeline .fsd-timeline-block::before {
+        left: -22px;
+    }
+
+    .fsd-policy-box {
+
+        padding: 20px !important;
+    }
+}
+
+/* ===============================
+   TIMELINE SCROLL ANIMATION
+================================ */
+.fsd-timeline-block {
+    opacity: 0.4;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fsd-timeline-block.fsd-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animated connector dot */
+.fsd-vertical-timeline .fsd-timeline-block::before {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform: scale(0.6);
+    background: #444;
+}
+
+/* Active dot */
+.fsd-vertical-timeline .fsd-timeline-block.fsd-active::before {
+    background: #f97316;
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(249, 115, 22, 0.25);
+}
+
+/* ===============================
+   YOU ARE HERE BADGE
+================================ */
+.fsd-you-are-here {
+    position: absolute;
+    top: -14px;
+    right: 18px;
+
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #000;
+
+    box-shadow:
+        0 6px 18px rgba(34, 197, 94, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+    animation: pulseMarker 1.8s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseMarker {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+
+.fsd-program-policy {
+    max-width: 1100px;
+    margin: 0 auto 100px;
+}
+
+.fsd-policy-box {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 40px;
+}
+
+.fsd-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 26px;
+}
+
+.fsd-list li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 14px;
+    color: #e5e7eb;
+}
+
+.fsd-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #f97316;
+}
+
+.fsd-note {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-top: 20px;
+}
+
+.fsd-faq-section {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+}
+
+.fsd-faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.fsd-faq-item {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.fsd-faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f97316;
+    text-align: left;
+}
+
+.fsd-faq-icon {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.fsd-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    color: #d1d5db;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+/* ACTIVE STATE */
+.fsd-faq-item.active .fsd-faq-answer {
+    max-height: 300px;
+    padding: 0 24px 20px;
+}
+
+.fsd-faq-item.active .fsd-faq-icon {
+    transform: rotate(45deg);
+}
+
+
+.fsd-certification-section {
+    max-width: 1100px;
+    margin: 0 auto 120px;
+}
+
+.fsd-certification-intro {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+.fsd-certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.fsd-cert-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 26px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fsd-cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.fsd-cert-card h3 {
+    color: #f97316;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.fsd-cert-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fsd-cert-card li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+.fsd-cert-card li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+}
+
+.fsd-certification-note {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+
+.fsd-ai-tools-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fsd-ai-intro {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    color: #9ca3af;
+}
+
+.fsd-ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.fsd-ai-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 28px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+}
+
+.fsd-ai-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+}
+
+.fsd-ai-card h3 {
+    color: #f97316;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.fsd-ai-card p {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.fsd-ai-tag {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 999px;
+    background: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+}
