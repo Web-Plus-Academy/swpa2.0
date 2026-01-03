@@ -240,6 +240,7 @@ section {
     max-width: 800px;
     margin: auto;
     list-style: none;
+    padding-left: 0px !important;
 }
 
 .fsd-outcome-list li {
@@ -274,8 +275,14 @@ section {
     color: #6b7280;
 }
 
-.fsd-roi-section {
-    background: #0f0f0f;
+.fsd-roi-section,
+.fsd-launchpad-section,
+.fsd-program-policy,
+.fsd-outcome-section{
+    background: linear-gradient(135deg,
+            hsl(211, 100%, 6%) 0%,
+            hsl(0, 0%, 6%) 50%,
+            hsl(25, 100%, 6%) 100%);
 }
 
 .fsd-roi-intro {
@@ -335,13 +342,15 @@ section {
    PROGRAM ROADMAP BASE
 ================================ */
 .fsd-program-roadmap {
-    padding: 50px 35px;
+    padding: 50px 20px;
     background: linear-gradient(135deg,
             hsl(211, 100%, 6%) 0%,
             hsl(0, 0%, 6%) 50%,
             hsl(25, 100%, 6%) 100%);
     color: #e5e7eb;
 }
+
+
 
 
 /* ===============================
@@ -917,4 +926,255 @@ section {
     border-radius: 999px;
     background: rgba(249, 115, 22, 0.15);
     color: #f97316;
+}
+
+
+/* ================= ENTRANCE & SCHOLARSHIP EXAM ================= */
+
+.fsd-entrance-section {
+    padding: 80px 20px;
+    background: #0f0f0f;
+    color: #eaeaea;
+}
+
+.fsd-entrance-intro {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #bdbdbd;
+    line-height: 1.7;
+}
+
+/* ================= BOX ================= */
+
+.fsd-entrance-box {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background: #161616;
+    border-radius: 16px;
+    border: 1px solid #262626;
+}
+
+/* ================= EXAM GRID ================= */
+
+.fsd-exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.fsd-exam-card {
+    background: #1d1d1d;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fsd-exam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.fsd-exam-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.fsd-exam-card p {
+    font-size: 14px;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+
+.fsd-exam-marks {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #ff7a18, #ff9f1a);
+    color: #000;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 20px;
+}
+
+/* ================= SYLLABUS ================= */
+
+.fsd-syllabus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.fsd-syllabus-card {
+    background: #1c1c1c;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #2a2a2a;
+}
+
+.fsd-syllabus-card h4 {
+    font-size: 17px;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.fsd-syllabus-card ul {
+    padding-left: 18px;
+}
+
+.fsd-syllabus-card li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #cfcfcf;
+}
+
+/* ================= LIST ================= */
+
+.fsd-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+}
+
+.fsd-list li {
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #d6d6d6;
+    position: relative;
+}
+
+.fsd-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff9f1a;
+    font-weight: bold;
+}
+
+/* ================= NOTE ================= */
+
+.fsd-note {
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: rgba(255, 122, 24, 0.1);
+    border-left: 4px solid #ff7a18;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #f0f0f0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .fsd-entrance-box {
+        padding: 22px;
+    }
+
+    .fsd-exam-card,
+    .fsd-syllabus-card {
+        padding: 20px;
+    }
+
+    .fsd-exam-card h4,
+    .fsd-syllabus-card h4 {
+        font-size: 16px;
+    }
+}
+
+
+/* ================= STICKY ROADMAP ================= */
+
+.launchpad-roadmap-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #0f0f0f;
+    border-bottom: 1px solid #262626;
+}
+
+.launchpad-roadmap {
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-evenly;
+    /* gap: 10px; */
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    scrollbar-width: none;
+}
+
+.launchpad-roadmap::-webkit-scrollbar {
+    display: none;
+}
+
+.launchpad-roadmap button {
+    background: #161616;
+    color: #ffffff;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.launchpad-roadmap button span {
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.launchpad-roadmap button.active,
+.launchpad-roadmap button:hover {
+    background: linear-gradient(135deg, #ff7a18, #ff9f1a);
+    color: #000;
+    font-weight: 700;
+    border: 2px solid white;
+}
+
+/* COMPLETED STEP */
+.launchpad-roadmap button.completed {
+  background: linear-gradient(135deg, #ff7a18, #ff9f1a);
+  color: #000;
+  border-color: transparent;
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+.launchpad-roadmap button.completed span {
+  color: #000;
+}
+
+
+
+.fsd-launchpad-intro {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #bdbdbd;
+}
+
+/* ================= PROGRESS LINE ================= */
+
+.launchpad-progress-track {
+    width: 100%;
+    height: 4px;
+    background: #1f1f1f;
+    position: relative;
+    overflow: hidden;
+}
+
+.launchpad-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff7a18, #ff9f1a);
+    transition: width 0.4s ease;
 }
