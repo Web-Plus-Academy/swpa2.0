@@ -1059,15 +1059,22 @@ select {
 }
 
 .courses-grid {
-    display: grid;
-    gap: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
 }
 
+/* Desktop / Tablet */
 @media (min-width: 768px) {
-    .courses-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* First card full width */
+  .course-card.full {
+    grid-column: 1 / -1;
+  }
 }
+
 
 .course-card {
     position: relative;
@@ -1193,7 +1200,7 @@ select {
 
 .stipend-sticker {
     position: absolute;
-    height: 100px;
+    height: 200px;
     right: 10px;
     top: 10px;
     transform: rotate(-20deg);
@@ -1202,8 +1209,7 @@ select {
 
 @media (max-width: 800px) {
     .stipend-sticker {
-        height: 120px;
-        right: 0px;
+        height: 100px;
         bottom: 200px;
     }
 }
