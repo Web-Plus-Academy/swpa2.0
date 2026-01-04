@@ -74,6 +74,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<!-- Scroll to Top with Progress -->
+<button id="scrollTopBtn" aria-label="Go to top">
+    <svg class="progress-ring" width="52" height="52">
+        <circle class="progress-ring-bg" cx="26" cy="26" r="22" />
+        <circle class="progress-ring-fill" cx="26" cy="26" r="22" />
+    </svg>
+    <span class="scroll-percent">0%</span>
+    <span class="arrow">↑</span>
+</button>
+
 
 <body>
     <!-- Header -->
@@ -182,8 +192,8 @@
 
                 <!-- CTA Buttons -->
                 <div class="hero-cta">
-                    <a href="#courses" class="btn btn-hero btn-xl">
-                        Enroll Now
+                    <a target="_blank" href="./Courses/FSD.html" class="btn btn-hero btn-xl">
+                        Saredufy Launchpad
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>

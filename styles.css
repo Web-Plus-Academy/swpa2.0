@@ -53,6 +53,81 @@
     --radius-xl: 1.5rem;
 }
 
+/* Scroll to top button */
+#scrollTopBtn {
+    font-family: "Alexandria", sans-serif;
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    z-index: 9999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* SVG ring */
+.progress-ring {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 4;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: #ff7a18;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 138;
+    /* 2πr */
+    stroke-dashoffset: 138;
+    transition: stroke-dashoffset 0.2s ease;
+}
+
+/* Percentage text */
+.scroll-percent {
+    font-size: 11px;
+    font-weight: 600;
+    position: absolute;
+    /* top: 12px; */
+    opacity: 0.6;
+    color: orange
+}
+
+/* Arrow */
+.arrow {
+    position: absolute;
+    font-size: 20px;
+}
+
+/* Hover */
+#scrollTopBtn:hover {
+    background: #000;
+}
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+    #scrollTopBtn {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
 
 /* ========================================
    Reset & Base
@@ -289,7 +364,7 @@ select {
     transform: translateX(4px);
 }
 
-.btn-history{
+.btn-history {
     border: 2px solid white;
     font-size: 12px;
 }
@@ -443,7 +518,8 @@ select {
     bottom: -2px;
     width: 0;
     height: 2px;
-    background: #f97316; /* Orange */
+    background: #f97316;
+    /* Orange */
     transition: width 0.3s ease;
 }
 
@@ -476,7 +552,7 @@ select {
     left: 0;
     background: #111;
     border-radius: 10px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
     padding: 8px 0;
     min-width: 190px;
     opacity: 0;
@@ -850,7 +926,7 @@ select {
 
 .floating-icon-3 {
     bottom: 8rem;
-    left: 8rem;
+    left: 7rem;
     color: var(--primary);
     animation-delay: 1s;
 }
@@ -1059,20 +1135,20 @@ select {
 }
 
 .courses-grid {
-  display: grid;
-  gap: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
 }
 
 /* Desktop / Tablet */
 @media (min-width: 768px) {
-  .courses-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  /* First card full width */
-  .course-card.full {
-    grid-column: 1 / -1;
-  }
+    /* First card full width */
+    .course-card.full {
+        grid-column: 1 / -1;
+    }
 }
 
 
@@ -1140,7 +1216,7 @@ select {
     border-radius: 8px;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    
+
     /* Depth & Glow */
     box-shadow:
         0 6px 14px rgba(255, 193, 7, 0.45),
@@ -1288,7 +1364,7 @@ select {
 /* Sliding indicator */
 .toggle-indicator,
 .project-toggle-indicator,
-.billing-toggle-indicator{
+.billing-toggle-indicator {
     position: absolute;
     top: 6px;
     left: 6px;
@@ -1306,9 +1382,9 @@ select {
 }
 
 /* Buttons */
-.program-btn, 
+.program-btn,
 .project-btn,
-.billing-btn{
+.billing-btn {
     position: relative;
     z-index: 1;
 
@@ -1405,142 +1481,143 @@ Internship
 }
 
 .swpa-intern-card {
-  background: radial-gradient(circle at top left, #1b1b1b, #0b0b0b);
-  border: 1px solid rgba(255,165,0,0.15);
+    background: radial-gradient(circle at top left, #1b1b1b, #0b0b0b);
+    border: 1px solid rgba(255, 165, 0, 0.15);
 }
 
 /* Icon */
 .swpa-intern-icon-wrap {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .swpa-intern-icon {
-  width: 54px;
-  height: 54px;
-  background: rgba(255,165,0,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 165, 0, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .swpa-intern-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: #ff9f1c;
+    width: 24px;
+    height: 24px;
+    stroke: #ff9f1c;
 }
 
 /* Title */
 .swpa-intern-title {
-  font-size: 22px;
-  font-weight: 700;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 /* Description */
 .swpa-intern-desc {
-  color: #cfcfcf;
+    color: #cfcfcf;
 }
 
 /* Meta Pills */
 .swpa-intern-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 18px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0;
 }
 
 .swpa-meta-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 20px;
-  background: rgba(255,165,0,0.08);
-  border: 1px solid rgba(255,165,0,0.25);
-  font-size: 13px;
-  color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255, 165, 0, 0.08);
+    border: 1px solid rgba(255, 165, 0, 0.25);
+    font-size: 13px;
+    color: #fff;
 }
 
 .swpa-meta-pill svg {
-  width: 16px;
-  height: 16px;
-  stroke: #ff9f1c;
-  fill: none;
+    width: 16px;
+    height: 16px;
+    stroke: #ff9f1c;
+    fill: none;
 }
 
 /* Section Headings */
 .swpa-section-heading {
-  font-weight: 600;
-  margin: 16px 0 8px;
+    font-weight: 600;
+    margin: 16px 0 8px;
 }
 
 /* Skills */
 .swpa-intern-skills,
 .swpa-intern-eligibility {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 /* Eligibility List with Orange Dots */
 
 .swpa-intern-eligibility-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
 }
 
 .swpa-intern-eligibility-list li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #e5e5e5;
-  line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #e5e5e5;
+    line-height: 1.6;
 }
 
 .swpa-intern-eligibility-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 7px;
-  height: 7px;
-  background: #ff9f1c; /* same orange as course card */
-  border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 7px;
+    height: 7px;
+    background: #ff9f1c;
+    /* same orange as course card */
+    border-radius: 50%;
 }
 
 
 .swpa-skill-chip {
-  background: #0f172a;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  color: #e5e5e5;
+    background: #0f172a;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #e5e5e5;
 }
 
 /* Footer */
 .swpa-intern-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
 }
 
 .swpa-footer-note {
-  font-size: 14px;
-  color: #bdbdbd;
+    font-size: 14px;
+    color: #bdbdbd;
 }
 
 /* Button */
 .swpa-btn-primary {
-  background: linear-gradient(135deg, #ff8c00, #ffb347);
-  border: none;
-  padding: 10px 22px;
-  border-radius: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  color: #000;
+    background: linear-gradient(135deg, #ff8c00, #ffb347);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #000;
 }
 
 
@@ -1558,7 +1635,7 @@ Internship
     text-align: center;
     border-radius: 18px;
     background: radial-gradient(circle at top left, #1b1b1b, #0b0b0b);
-    border: 1px solid rgba(255,165,0,0.15);
+    border: 1px solid rgba(255, 165, 0, 0.15);
 }
 
 .launching-tag {
@@ -1567,7 +1644,7 @@ Internship
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 20px;
-    background: rgba(255,165,0,0.15);
+    background: rgba(255, 165, 0, 0.15);
     color: #ff9f1c;
     margin-bottom: 10px;
 }
@@ -1590,9 +1667,9 @@ Internship
 ================================ */
 
 .swpa-events-grid {
-  display: grid;
-  gap: 28px;
-  margin-top: 40px;
+    display: grid;
+    gap: 28px;
+    margin-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -1606,11 +1683,11 @@ Internship
 ================================ */
 
 .swpa-event-card {
-  background: radial-gradient(circle at top, #1c1c1c, #0b0b0b);
-  border-radius: 22px;
-  /* overflow: hidden; */
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+    background: radial-gradient(circle at top, #1c1c1c, #0b0b0b);
+    border-radius: 22px;
+    /* overflow: hidden; */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
 }
 
 /* IMAGE */
@@ -1621,153 +1698,149 @@ Internship
 
 .swpa-event-image img {
     border-radius: 22px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* IMAGE OVERLAY */
 .swpa-event-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
 }
 
 /* PILLS */
 .swpa-event-type,
 .swpa-event-status {
-  position: absolute;
-  bottom: 10px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 10px;
-  z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    z-index: 2;
 
-  /* 3D look */
-  background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(0,0,0,0.25));
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow:
-    0 4px 10px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.25);
+    /* 3D look */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 
 .swpa-event-type {
-  left: 14px;
-  color: #ff9f1c;
-  background: linear-gradient(
-    145deg,
-    rgba(255,165,0,0.35),
-    rgba(255,165,0,0.15)
-  );
+    left: 14px;
+    color: #ff9f1c;
+    background: linear-gradient(145deg,
+            rgba(255, 165, 0, 0.35),
+            rgba(255, 165, 0, 0.15));
 }
 
 .swpa-event-status {
-  right: 14px;
-  color: #22c55e;
-  background: linear-gradient(
-    145deg,
-    rgba(34,197,94,0.35),
-    rgba(34,197,94,0.15)
-  );
+    right: 14px;
+    color: #22c55e;
+    background: linear-gradient(145deg,
+            rgba(34, 197, 94, 0.35),
+            rgba(34, 197, 94, 0.15));
 }
 
 
 /* ================= TYPE BADGES ================= */
 
 .swpa-event-type.type-webinar {
-  background: linear-gradient(145deg, rgba(255,165,0,0.35), rgba(255,165,0,0.15));
-  color: #ff9f1c;
+    background: linear-gradient(145deg, rgba(255, 165, 0, 0.35), rgba(255, 165, 0, 0.15));
+    color: #ff9f1c;
 }
 
 .swpa-event-type.type-workshop {
-  background: linear-gradient(145deg, rgba(59,130,246,0.35), rgba(59,130,246,0.15));
-  color: #3b82f6;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0.15));
+    color: #3b82f6;
 }
 
 .swpa-event-type.type-conference {
-  background: linear-gradient(145deg, rgba(168,85,247,0.35), rgba(168,85,247,0.15));
-  color: #a855f7;
+    background: linear-gradient(145deg, rgba(168, 85, 247, 0.35), rgba(168, 85, 247, 0.15));
+    color: #a855f7;
 }
 
 .swpa-event-type.type-meetup {
-  background: linear-gradient(145deg, rgba(34,197,94,0.35), rgba(34,197,94,0.15));
-  color: #22c55e;
+    background: linear-gradient(145deg, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.15));
+    color: #22c55e;
 }
 
 .swpa-event-type.type-quizathon {
-  background: linear-gradient(145deg, rgba(239,68,68,0.35), rgba(239,68,68,0.15));
-  color: #ef4444;
+    background: linear-gradient(145deg, rgba(239, 68, 68, 0.35), rgba(239, 68, 68, 0.15));
+    color: #ef4444;
 }
 
 
 /* ================= STATUS BADGES ================= */
 
 .swpa-event-status.status-free {
-  background: linear-gradient(145deg, rgba(34,197,94,0.35), rgba(34,197,94,0.15));
-  color: #22c55e;
+    background: linear-gradient(145deg, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.15));
+    color: #22c55e;
 }
 
 .swpa-event-status.status-paid {
-  background: linear-gradient(145deg, rgba(245,158,11,0.35), rgba(245,158,11,0.15));
-  color: #f59e0b;
+    background: linear-gradient(145deg, rgba(245, 158, 11, 0.35), rgba(245, 158, 11, 0.15));
+    color: #f59e0b;
 }
 
 .swpa-event-status.status-registered {
-  background: linear-gradient(145deg, rgba(59,130,246,0.35), rgba(59,130,246,0.15));
-  color: #3b82f6;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0.15));
+    color: #3b82f6;
 }
 
 .swpa-event-status.status-ended {
-  background: linear-gradient(145deg, rgba(107,114,128,0.35), rgba(107,114,128,0.15));
-  color: #9ca3af;
+    background: linear-gradient(145deg, rgba(107, 114, 128, 0.35), rgba(107, 114, 128, 0.15));
+    color: #9ca3af;
 }
 
 
 
 /* CONTENT */
 .swpa-event-content {
-  padding: 22px;
+    padding: 22px;
 }
 
 .swpa-event-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
 }
 
 /* META */
 .swpa-event-meta {
-  display: grid;
-  gap: 8px;
-  font-size: 14px;
-  color: #d4d4d4;
-  margin-bottom: 14px;
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    color: #d4d4d4;
+    margin-bottom: 14px;
 }
 
 /* DESCRIPTION */
 .swpa-event-desc {
-  font-size: 14px;
-  color: #bdbdbd;
-  line-height: 1.6;
-  margin-bottom: 20px;
+    font-size: 14px;
+    color: #bdbdbd;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* BUTTON */
 .swpa-event-btn {
-  width: 100%;
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
-  color: #bdbdbd;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: not-allowed;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    color: #bdbdbd;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: not-allowed;
 }
 
 
@@ -1886,12 +1959,13 @@ Internship
     border: 1px solid rgba(255, 166, 0, 0.4);
 }
 
-.side-sticker{
+.side-sticker {
     /* border: 2px solid red; */
     position: absolute;
     right: 20px;
     top: 20px;
 }
+
 /* ========================================
    Pricing Section
 ======================================== */
@@ -2173,24 +2247,29 @@ Internship
 
 @media (max-width: 800px) {
     .review-name {
-    font-size: 14px;
+        font-size: 14px;
     }
+
     .review-role {
-    font-size: 10px;
+        font-size: 10px;
     }
+
     .review-company-logo {
         height: 2.0rem;
     }
+
     .review-card-main {
         height: 60vh;
     }
-    .review-content{
+
+    .review-content {
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-between;
     }
-    .review-nav-btn{
+
+    .review-nav-btn {
         height: 1.25rem !important;
         width: 1.25rem !important;
     }
@@ -2322,7 +2401,7 @@ Internship
     /* opacity: 0.85; */
 }
 
-.add-review{
+.add-review {
     /* border: 2px solid red; */
     text-align: center;
     margin-top: 20px;
@@ -2357,7 +2436,7 @@ Internship
     cursor: pointer;
 }
 
-.founder-card:hover{
+.founder-card:hover {
     box-shadow: 0 20px 50px rgba(255, 153, 0, 0.155);
     transition: all 0.3s ease;
     border-color: var(--accent);
@@ -2403,20 +2482,20 @@ Internship
     color: #919397;
 }
 
-.founder-line{
+.founder-line {
     margin: 20px 0;
     opacity: 0.5;
     border-color: var(--accent);
 }
 
 
-.brand-sticker-btm{
+.brand-sticker-btm {
     position: absolute;
     top: -1rem;
     left: -1rem;
 }
 
-.brand-sticker-top{
+.brand-sticker-top {
     position: absolute;
     top: -1rem;
     right: -1rem;
@@ -2424,6 +2503,7 @@ Internship
 
 
 @media (max-width: 768px) {
+
     .founder-card,
     .founder-card.reverse {
         grid-template-columns: 1fr;
@@ -2521,12 +2601,14 @@ Internship
         font-size: 12px;
         margin-top: 0;
     }
+
     .contact-card-icon {
         height: 1.5rem;
         width: 1.5rem;
         padding: 5px;
     }
-    .contact-card-label{
+
+    .contact-card-label {
         font-size: 10px;
     }
 }
@@ -2545,7 +2627,7 @@ Internship
     border: 1px solid hsla(222, 30%, 18%, 0.3);
     overflow: hidden;
     height: auto;
-    
+
 }
 
 .form-glow {
@@ -2894,104 +2976,111 @@ Internship
 
 /* Step indicator */
 .step-indicator {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .step {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #2a2a2a;
-  color: #999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
 }
 
 .step.active {
-  background: linear-gradient(135deg, #ff9800, #ffb300);
-  color: #111;
+    background: linear-gradient(135deg, #ff9800, #ffb300);
+    color: #111;
 }
 
 /* Steps */
 .form-step {
-  display: none;
-  animation: fadeStep 0.4s ease;
+    display: none;
+    animation: fadeStep 0.4s ease;
 }
 
 .form-step.active {
-  display: block;
+    display: block;
 }
 
 @keyframes fadeStep {
-  from { opacity: 0; transform: translateX(10px); }
-  to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Section title */
 .form-section-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #ff9800;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ff9800;
 }
 
 /* Grid */
 .form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
 }
 
 /* Actions */
 .step-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
 }
 
 .btn-outline-1 {
-  background: transparent;
-  border: 1px solid #ff9800;
-  color: #ff9800;
-  padding: 0.625rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
+    background: transparent;
+    border: 1px solid #ff9800;
+    color: #ff9800;
+    padding: 0.625rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* Payment */
 .payment-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 .payment-box img {
-  max-width: 180px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,152,0,0.3);
+    max-width: 180px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 152, 0, 0.3);
 }
 
 .next-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  filter: grayscale(0.4);
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.4);
 }
 
 .error-text {
-  color: #ff5252;
-  font-size: 0.75rem;
-  margin-top: -6px;
-  display: none;
+    color: #ff5252;
+    font-size: 0.75rem;
+    margin-top: -6px;
+    display: none;
 }
 
 input.invalid {
-  border: 1px solid #ff5252;
+    border: 1px solid #ff5252;
 }
 
 
@@ -3025,7 +3114,7 @@ input.invalid {
     cursor: pointer;
 }
 
-.course-select{
+.course-select {
     margin-bottom: 10px !important;
 }
 

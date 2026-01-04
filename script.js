@@ -30,6 +30,50 @@ document.querySelectorAll('.nav-link-mobile').forEach(link => {
     });
 });
 
+
+//loader top up scroll
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  const progressCircle = document.querySelector(".progress-ring-fill");
+  const percentText = document.querySelector(".scroll-percent");
+
+  const radius = 22;
+  const circumference = 2 * Math.PI * radius;
+
+  progressCircle.style.strokeDasharray = circumference;
+  progressCircle.style.strokeDashoffset = circumference;
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+    // Show / hide button
+    if (scrollTop > 150) {
+      scrollBtn.style.display = "flex";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+
+    // Update circle
+    const offset =
+      circumference - (scrollPercent / 100) * circumference;
+
+    progressCircle.style.strokeDashoffset = offset;
+    percentText.textContent = `${scrollPercent}%`;
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+
+
 // ========================================
 // About Section Slider
 // ========================================

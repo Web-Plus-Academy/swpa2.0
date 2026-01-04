@@ -15,6 +15,83 @@ section {
     padding: 20px 20px;
 }
 
+
+/* Scroll to top button */
+#scrollTopBtn {
+    font-family: "Alexandria", sans-serif;
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    z-index: 99999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* SVG ring */
+.progress-ring {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 4;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: #ff7a18;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 138;
+    /* 2πr */
+    stroke-dashoffset: 138;
+    transition: stroke-dashoffset 0.2s ease;
+}
+
+/* Percentage text */
+.scroll-percent {
+    font-size: 11px;
+    font-weight: 600;
+    position: absolute;
+    /* top: 12px; */
+    opacity: 0.6;
+    color: orange
+}
+
+/* Arrow */
+.arrow {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover */
+#scrollTopBtn:hover {
+    background: #000;
+}
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+    #scrollTopBtn {
+        width: 48px;
+        height: 48px;
+    }
+}
+
 .fsd-hero-section {
     display: flex;
     flex-direction: column;
@@ -54,7 +131,7 @@ section {
     }
 
     .fsd-hero-section {
-        padding: 30px !important;
+        padding: 30px 10px !important;
     }
 
     .fsd-price {
@@ -85,12 +162,50 @@ section {
 }
 
 .fsd-hero-meta {
+    width: 80%;
     display: flex;
     justify-content: center;
     gap: 14px;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin: 30px auto;
 }
+
+@media (max-width: 750px) {
+    .fsd-hero-meta {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .fsd-meta-item {
+    display: flex;                 /* IMPORTANT */
+    align-items: center;
+    justify-content: center;
+  }
+
+    .fsd-hero-meta span {
+        font-size: 8px !important;
+        padding: 6px 4px !important;
+    }
+
+    .fsd-meta-item svg {
+        height: 15px;
+        width: 15px;
+    }
+
+    /* Second row: 2 boxes (span 2 columns) */
+    /* .fsd-meta-item:nth-child(1),
+    .fsd-meta-item:nth-child(4),
+    .fsd-meta-item:nth-child(5) {
+        grid-column: span 2;
+    }*/
+
+    .fsd-meta-item:nth-child(6) {
+        grid-column: span 2;
+    } 
+
+}
+
 
 .fsd-meta-item {
     display: inline-flex;
@@ -554,7 +669,7 @@ section {
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
-    color: #9ca3af;
+    color: #99beff;
     margin-bottom: 10px;
 }
 
@@ -569,9 +684,9 @@ section {
 .fsd-progress-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #f97316, #fb923c);
+    background: linear-gradient(90deg, #ffd3b4, #df6400);
     border-radius: 999px;
-    transition: width 1.5s ease;
+    transition: width 5s ease;
 }
 
 /* ===============================
@@ -1089,6 +1204,28 @@ section {
     }
 }
 
+.viewcurr {
+    color: orange;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.viewcurr:hover {
+    background: white;
+    color: black;
+    transition: 0.3s;
+    font-weight: bold;
+    border: 2px solid orange;
+}
+
+
 
 /* ================= STICKY ROADMAP ================= */
 
@@ -1096,8 +1233,12 @@ section {
     position: sticky;
     top: 0;
     z-index: 999;
-    background: #0f0f0f;
+    background: rgba(255, 122, 24, 0.1);
     border-bottom: 1px solid #262626;
+    padding: 10px;
+    /* Blur effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .launchpad-roadmap {
@@ -1131,12 +1272,15 @@ section {
     color: #ffffff;
 }
 
-.launchpad-roadmap button.active,
-.launchpad-roadmap button:hover {
+.launchpad-roadmap button.active {
     background: linear-gradient(135deg, #ff7a18, #ff9f1a);
     color: #000;
     font-weight: 700;
     border: 2px solid white;
+}
+
+.launchpad-roadmap button:hover {
+    background: linear-gradient(135deg, rgb(78, 78, 78), rgb(165, 165, 165));
 }
 
 /* COMPLETED STEP */
@@ -1166,18 +1310,26 @@ section {
 /* ================= PROGRESS LINE ================= */
 
 .launchpad-progress-track {
-    width: 100%;
+    margin: auto;
+    width: 70%;
     height: 4px;
     background: #1f1f1f;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .launchpad-progress-track {
+        width: 90%;
+    }
 }
 
 .launchpad-progress-fill {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, #ff7a18, #ff9f1a);
-    transition: width 0.4s ease;
+    transition: width 0.15s linear;
 }
 
 /* Base CTA */

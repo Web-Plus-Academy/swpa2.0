@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="fsd-page.css" />
 </head>
 
+<!-- Scroll to Top with Progress -->
+<button id="scrollTopBtn" aria-label="Go to top">
+    <svg class="progress-ring" width="52" height="52">
+        <circle class="progress-ring-bg" cx="26" cy="26" r="22" />
+        <circle class="progress-ring-fill" cx="26" cy="26" r="22" />
+    </svg>
+    <span class="scroll-percent">0%</span>
+    <span class="arrow">↑</span>
+</button>
+
 <body>
 
     <!-- ================= HERO ================= -->
@@ -30,45 +40,82 @@
 
             <div class="fsd-hero-meta">
 
+                <!-- Selective Admission -->
                 <span class="fsd-meta-item">
-                    <!-- Duration -->
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
+                        <path d="M3 4h18" />
+                        <path d="M6 10h12" />
+                        <path d="M10 16h4" />
+                    </svg>
+                    Selective Admission
+                </span>
+
+                <!-- Duration -->
+                <span class="fsd-meta-item">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
                     </svg>
                     9 Months
                 </span>
 
+                 <!-- Certification -->
                 <span class="fsd-meta-item">
-                    <!-- Online -->
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                        <path d="M8 21h8"></path>
-                        <path d="M12 17v4"></path>
-                    </svg>
-                    Online
-                </span>
-
-                <span class="fsd-meta-item">
-                    <!-- Live -->
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="3"></circle>
-                        <path d="M5.5 18.5a8 8 0 0 1 13 0"></path>
-                        <path d="M1 12a11 11 0 0 1 22 0"></path>
-                    </svg>
-                    Live Instructor-Led
-                </span>
-
-                <span class="fsd-meta-item">
-                    <!-- Certification -->
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="8" r="4"></circle>
-                        <path d="M6 22v-4a6 6 0 0 1 12 0v4"></path>
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M8 14l-2 6 6-3 6 3-2-6" />
                     </svg>
                     Certification
                 </span>
 
+                <!-- Online Mode -->
+                <span class="fsd-meta-item">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="12" rx="2" />
+                        <path d="M2 20h20" />
+                    </svg>
+                    Online Mode
+                </span>
+
+               
+                
+                <!-- Live Training -->
+                <span class="fsd-meta-item">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M5.5 5.5a9 9 0 0 1 13 0" />
+                        <path d="M18.5 18.5a9 9 0 0 1-13 0" />
+                    </svg>
+                    Live Instructor
+                </span>
+
+                
+                
+                <!-- Internship -->
+                <span class="fsd-meta-item">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="7" width="18" height="13" rx="2" />
+                        <path d="M9 7V5h6v2" />
+                    </svg>
+                    Stipend Internship
+                </span>
+
+                 
+
+                <!-- Job Assistance -->
+                <span class="fsd-meta-item">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 17l6-6 4 4 7-7" />
+                        <path d="M14 4h7v7" />
+                    </svg>
+                    100% Job Assistance
+                </span>
+
             </div>
+
 
 
             <div class="fsd-price-box">
@@ -285,7 +332,7 @@
     </section>
 
     <!-- //open of stick scroller -->
-    <div class="scroll-stick">
+    <div class="launchpad-flow">
 
 
 
@@ -327,19 +374,24 @@
 
                 <ul class="fsd-list">
                     <li>
-                        <strong>Total Marks:</strong> 50
+                        <strong>Total Marks:</strong> 200
                     </li>
                     <li>
                         <strong>Exam Mode:</strong> Online
                     </li>
                     <li>
-                        <strong>Question Type:</strong> MCQs + Practical-based questions
+                        <strong>Question Type:</strong> MCQs
+                    </li>
+                    <li>
+                        <strong>Marking Scheme:</strong>
+                        +4 mark for each correct answer, −1 mark for each incorrect answer
                     </li>
                     <li>
                         <strong>Minimum Eligibility to Join Course:</strong>
-                        <strong>25 Marks</strong>
+                        <strong>80 Marks</strong>
                     </li>
                 </ul>
+
 
                 <div class="fsd-exam-grid">
 
@@ -349,7 +401,7 @@
                             Tests problem-solving ability, logical thinking,
                             and basic analytical skills.
                         </p>
-                        <span class="fsd-exam-marks">30 Marks</span>
+                        <span class="fsd-exam-marks">120 Marks</span>
                     </div>
 
                     <div class="fsd-exam-card">
@@ -358,7 +410,7 @@
                             Tests basic understanding of web structure,
                             styling concepts, and layout fundamentals.
                         </p>
-                        <span class="fsd-exam-marks">20 Marks</span>
+                        <span class="fsd-exam-marks">80 Marks</span>
                     </div>
 
                 </div>
@@ -373,7 +425,7 @@
                 <div class="fsd-syllabus-grid">
 
                     <div class="fsd-syllabus-card">
-                        <h4>General Aptitude & Logical Reasoning (30 Marks)</h4>
+                        <h4>General Aptitude & Logical Reasoning (120 Marks)</h4>
                         <ul>
                             <li>Number series & patterns</li>
                             <li>Basic arithmetic reasoning</li>
@@ -384,7 +436,7 @@
                     </div>
 
                     <div class="fsd-syllabus-card">
-                        <h4>HTML & CSS Fundamentals (20 Marks)</h4>
+                        <h4>HTML & CSS Fundamentals (80 Marks)</h4>
                         <ul>
                             <li>HTML tags & document structure</li>
                             <li>Basic form elements</li>
@@ -429,7 +481,7 @@
 
                 <p class="fsd-note">
                     <strong>Important:</strong>
-                    Candidates scoring below <strong>25 marks</strong>
+                    Candidates scoring below <strong>80 marks</strong>
                     are not eligible for admission into the Full Stack Development program.
                 </p>
 
@@ -439,129 +491,166 @@
 
         <!-- ================= PROGRAM ROADMAP ================= -->
         <section class="fsd-program-roadmap" id="step2">
+
+
+
+            <h2 class="fsd-section-title">9-Month Full Stack Development <span>Program Roadmap</span></h2>
             <!-- ===== PROGRESS BAR ===== -->
             <div class="fsd-progress-wrapper">
                 <div class="fsd-progress-labels">
+                    <span>Zero</span>
                     <span>Month 1</span>
+                    <span>#SWPA</span>
                     <span>Month 9</span>
+                    <span>Advance</span>
                 </div>
+
 
                 <div class="fsd-progress-track">
                     <div class="fsd-progress-fill" id="fsdProgressFill"></div>
                 </div>
             </div>
-
-
-            <h2 class="fsd-section-title">9-Month Full Stack Development <span>Program Roadmap</span></h2>
-
             <!-- ========= MONTH 1–6 : TRAINING ========= -->
             <div class="fsd-phase">
                 <h3 class="fsd-phase-title">Phase 1: Core Training (Month 1 – Month 6)</h3>
                 <p class="fsd-phase-desc">
-                    The first six months focus on building strong fundamentals, deep technical understanding,
-                    and real-world coding discipline through structured training and continuous practice.
+                    The first six months focus on building strong foundations, logical thinking,
+                    and full stack understanding through structured training.
+                    This phase is dedicated only to learning — no project pressure.
                 </p>
 
                 <div class="fsd-timeline fsd-vertical-timeline">
 
+                    <!-- ================= MONTH 1 ================= -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 1 – Programming & Web Foundations</h4>
-                        <ul>
-                            <li>HTML5, CSS3 & Modern JavaScript (ES6+)</li>
-                            <li>Programming logic & problem-solving fundamentals</li>
-                            <li>Responsive layouts & browser behavior</li>
-                        </ul>
+                        <h4>Month 1 – UI/UX & Programming Logic & DSA (Python)</h4>
+                        <!-- <ul>
+                            <li><strong>Week 1:</strong> UI/UX fundamentals, design thinking, Figma basics</li>
+                            <li><strong>Week 2:</strong> Wireframing, user flows, layout systems, component mindset</li>
+                            <li><strong>Week 3:</strong> Python fundamentals (variables, conditions, loops, functions)
+                            </li>
+                            <li><strong>Week 4:</strong> Python for computational coding, DSA basics & problem-solving
+                                approach</li>
+                        </ul> -->
                     </div>
 
+                    <!-- ================= MONTH 2 ================= -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 2 – Advanced JavaScript & Data Structures</h4>
-                        <ul>
-                            <li>Advanced JavaScript concepts & async programming</li>
-                            <li>Core data structures for web developers</li>
-                            <li>Clean coding & debugging techniques</li>
-                        </ul>
+                        <h4>Month 2 – Git, GitHub HTML & CSS</h4>
+                        <!-- <ul>
+                            <li><strong>Week 1:</strong> Git & GitHub basics, version control workflow</li>
+                            <li><strong>Week 2:</strong> HTML basics (tags, structure, semantics)</li>
+                            <li><strong>Week 3:</strong> HTML advanced (tables, forms, inputs)</li>
+                            <li><strong>Week 4:</strong> CSS basics (colors, sizing, box model) & UI to webpage
+                                conversion</li>
+                        </ul> -->
                     </div>
 
+                    <!-- ================= MONTH 3 ================= -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 3 – Frontend Development (React)</h4>
-                        <ul>
-                            <li>React fundamentals, hooks & component architecture</li>
-                            <li>State management & performance optimization</li>
-                            <li>Responsive & accessible UI design</li>
-                        </ul>
+                        <h4>Month 3 – Advanced CSS & JavaScript</h4>
+                        <!-- <ul>
+                            <li><strong>Week 1:</strong> Advanced CSS layouts, Flexbox, Grid, responsive UI</li>
+                            <li><strong>Week 2:</strong> CSS animations, transitions & UI patterns</li>
+                            <li><strong>Week 3:</strong> JavaScript fundamentals (ES6+, arrays, objects, functions)</li>
+                            <li><strong>Week 4:</strong> DOM manipulation, events & Frontend Application Deployment</li>
+                        </ul> -->
                     </div>
 
+                    <!-- ================= MONTH 4 ================= -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 4 – Backend Development</h4>
-                        <ul>
-                            <li>Node.js & Express.js</li>
-                            <li>REST API design & backend architecture</li>
-                            <li>Error handling & middleware</li>
-                        </ul>
+                        <h4>Month 4 – Backend (Node & Express)</h4>
+                        <!-- <ul>
+                            <li><strong>Week 1:</strong> Backend fundamentals & client–server architecture</li>
+                            <li><strong>Week 2:</strong> Node.js basics & Express server setup</li>
+                            <li><strong>Week 3:</strong> REST API design, routing & controllers</li>
+                            <li><strong>Week 4:</strong> Middleware, error handling & API testing</li>
+                        </ul> -->
                     </div>
 
+                    <!-- ================= MONTH 5 ================= -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 5 – Database & Authentication</h4>
-                        <ul>
-                            <li>MongoDB & database design</li>
-                            <li>CRUD operations & data modeling</li>
-                            <li>Authentication & authorization (JWT, roles)</li>
-                        </ul>
+                        <h4>Month 5 – Backend + Database & Authentication</h4>
+                        <!-- <ul>
+                            <li><strong>Week 1:</strong> MongoDB fundamentals & database design</li>
+                            <li><strong>Week 2:</strong> Mongoose schemas & CRUD operations</li>
+                            <li><strong>Week 3:</strong> Authentication basics (JWT, bcrypt)</li>
+                            <li><strong>Week 4:</strong> Authorization & secure API practices</li>
+                        </ul> -->
                     </div>
 
+                    <!-- ================= MONTH 6 ================= -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 6 – Full Stack Integration & DevOps Basics</h4>
-                        <ul>
-                            <li>End-to-end full stack application flow</li>
-                            <li>System design basics & scalable architecture</li>
-                            <li>DevOps fundamentals & cloud deployment</li>
-                        </ul>
+                        <h4>Month 6 – ReactJS & Full Stack Deployment</h4>
+                        <!-- <ul>
+                            <li><strong>Week 1:</strong> React fundamentals, components & JSX</li>
+                            <li><strong>Week 2:</strong> Hooks, state management & routing</li>
+                            <li><strong>Week 3:</strong> API integration & frontend–backend connection</li>
+                            <li><strong>Week 4:</strong> Full Stack application deployment & revision</li>
+                        </ul> -->
                     </div>
 
                 </div>
+                <a class="viewcurr" target="_blank"
+                    href="https://drive.google.com/file/d/1GeMOUlcxog2HMk8EV1tVqpoc9GBc7d8d/view?usp=sharing">Click to
+                    View Full Curriculum</a>
+
             </div>
 
             <!-- ========= MONTH 7–9 : PROJECTS & CAREER ========= -->
             <div class="fsd-phase">
-                <h3 class="fsd-phase-title">Phase 2: Projects, Internship & Career Readiness (Month 7 – Month 9)
+                <h3 class="fsd-phase-title">
+                    Phase 2: Projects, Internship & Industry Readiness (Month 7 – Month 9)
                 </h3>
                 <p class="fsd-phase-desc">
-                    The final three months focus on real-world implementation, industry-level projects,
-                    internship exposure, and complete career preparation.
+                    The final three months focus on real-world execution.
+                    No new concepts are taught — students apply what they have learned
+                    through structured full stack projects and industry-style workflows.
                 </p>
 
                 <div class="fsd-timeline">
 
+                    <!-- MONTH 7 -->
                     <div class="fsd-timeline-block">
-                        <span class="fsd-you-are-here">Real-World</span>
-                        <h4>Month 7 – Guided Project Development</h4>
+                        <span class="fsd-you-are-here">Real-World Phase Begins</span>
+                        <h4>Month 7 – Foundation & Management Systems</h4>
                         <ul>
-                            <li>Frontend + Backend + Database integration</li>
-                            <li>Project planning, architecture & best practices</li>
-                            <li>Code reviews & optimization</li>
+                            <li>Management systems (Student, Employee, Inventory)</li>
+                            <li>Admin dashboards & role-based applications</li>
+                            <li>Booking & scheduling systems</li>
+                            <li>Authentication-based and form-driven business apps</li>
+                            <li>Project planning, database design & Git workflow</li>
                         </ul>
                     </div>
 
+                    <!-- MONTH 8 -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 8 – Industry Projects & Internship Exposure</h4>
+                        <h4>Month 8 – Business & Real-World Applications</h4>
                         <ul>
-                            <li>Work on industry-style or internal company projects</li>
-                            <li>Team collaboration & development workflows</li>
-                            <li>Internship experience with performance evaluation</li>
+                            <li>E-commerce & order-based applications</li>
+                            <li>Service platforms & subscription-based systems</li>
+                            <li>Learning management systems & content platforms</li>
+                            <li>Finance tools (expense, invoice, billing systems)</li>
+                            <li>Frontend–backend integration, optimization & deployment</li>
                         </ul>
                     </div>
 
+                    <!-- MONTH 9 -->
                     <div class="fsd-timeline-block">
-                        <h4>Month 9 – Career Preparation & Placement Readiness</h4>
+                        <h4>Month 9 – Advanced Products & Career Readiness</h4>
                         <ul>
-                            <li>Resume & portfolio building</li>
-                            <li>Technical + HR interview preparation</li>
-                            <li>Mock interviews & career guidance</li>
+                            <li>SaaS products, marketplaces & enterprise-style systems</li>
+                            <li>AI-integrated or startup-grade capstone projects</li>
+                            <li>Production-level code refinement & scalability</li>
+                            <li>Final project presentation & technical evaluation</li>
+                            <li>Resume, GitHub, interview preparation & career guidance</li>
                         </ul>
                     </div>
 
                 </div>
             </div>
+
+
 
         </section>
 
