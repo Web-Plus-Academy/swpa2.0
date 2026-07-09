@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Meta -->
+    <title>All Courses | Saredufy Web Plus Academy Pvt. Ltd.</title>
+    <meta name="description"
+        content="Explore our extensive range of courses at Saredufy Web Plus Academy. Choose from Full Stack Development, Cyber Security, DevOps, Generative AI, Data Science, and 1-month fast-track programs.">
+    
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Custom Styling for Filter Page -->
+    <style>
+        .courses-hero {
+            padding: 8rem 0 4rem 0;
+            background: radial-gradient(circle at 50% 30%, hsla(24, 95%, 53%, 0.08), transparent 60%);
+            text-align: center;
+        }
+
+        .courses-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 30%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .courses-hero p {
+            color: var(--muted-foreground);
+            max-width: 36rem;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.125rem;
+        }
+
+        /* Search & Filter Container */
+        .filter-controls {
+            max-width: 1000px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.25rem 1.5rem 1.25rem 3.5rem;
+            background: var(--card);
+            border: 1px solid hsla(24, 95%, 53%, 0.2);
+            border-radius: 50px;
+            color: var(--foreground);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-card);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px hsla(24, 95%, 53%, 0.25);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted-foreground);
+            width: 1.5rem;
+            height: 1.5rem;
+            pointer-events: none;
+        }
+
+        /* Category Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-tab {
+            padding: 0.45rem 1rem;
+            background: var(--card);
+            border: 1px solid hsla(0, 0%, 22%, 0.6);
+            border-radius: 20px;
+            color: var(--muted-foreground);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .filter-tab:hover {
+            border-color: var(--primary);
+            color: var(--foreground);
+        }
+
+        .filter-tab.active {
+            background: var(--gradient-primary);
+            border-color: transparent;
+            color: var(--primary-foreground);
+            box-shadow: 0 2px 10px hsla(24, 95%, 53%, 0.25);
+            font-weight: 600;
+        }
+
+        /* Courses Filter Results Grid */
+        .courses-display-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        @media (min-width: 768px) {
+            .courses-display-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .courses-display-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* No Results Styling */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--card);
+            border-radius: var(--radius-xl);
+            border: 1px dashed var(--border);
+            display: none;
+        }
+
+        .no-results svg {
+            width: 4rem;
+            height: 4rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results p {
+            color: var(--muted-foreground);
+        }
+
+        /* Nav & Footer overrides */
+        .header {
+            background: hsla(222, 47%, 8%, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid hsla(222, 30%, 18%, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .courses-hero h1 {
+                font-size: 1.85rem !important;
+            }
+            .courses-hero p {
+                font-size: 0.9rem !important;
+                margin-bottom: 1.5rem;
+                padding: 0 1rem;
+            }
+            .filter-controls {
+                margin-bottom: 2rem;
+            }
+            .search-input {
+                padding: 0.75rem 1rem 0.75rem 2.5rem;
+                font-size: 0.85rem;
+            }
+            .search-icon {
+                left: 0.85rem;
+                width: 1.1rem;
+                height: 1.1rem;
+            }
+            .filter-tabs {
+                gap: 0.35rem;
+                margin-bottom: 1.5rem;
+            }
+            .filter-tab {
+                padding: 0.35rem 0.75rem;
+                font-size: 0.75rem;
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="./index.html" class="logo">
+                    <img height="60" src="./assets/logo.png" alt="SWPA Logo">
+                    <div class="logo-text">
+                        <img height="80" src="./assets/swpa.png" alt="Saredufy Web Plus Academy">
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="./index.html#home" class="nav-link">Home</a>
+                    <a href="./index.html#about" class="nav-link">About</a>
+
+                    <div class="nav-dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-trigger active">
+                            Programs ▾
+                        </a>
+                        <div class="dropdown-menu">
+                            <a target="_blank" href="./Courses/FSD.html"><b>Saredufy Launchpad</b></a>
+                            <a href="./index.html#courses">Training & Internship</a>
+                            <a href="./index.html#events">Events & Workshops</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-trigger">
+                            Development ▾
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="./index.html#projects" class="nav-link">Projects</a>
+                            <a href="./index.html#pricing" class="nav-link">Pricing</a>
+                            <a href="./index.html#subscribe" class="nav-link">AMC Plans</a>
+                        </div>
+                    </div>
+
+                    <a href="./index.html#contact" class="nav-link">Contact</a>
+                    <a target="_blank" href="https://mwc2k23-24.saredufywpa.in/" class="nav-link">History</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="header-actions">
+                    <!-- <a target="_blank" href="./Gallery/gallery.html" class="btn btn-history hide-mobile">Gallery</a> -->
+                    <a href="./index.html#courses" class="btn btn-hero hide-mobile">Enroll Now</a>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="navMobile">
+                <a href="./index.html#home" class="nav-link-mobile">Home</a>
+                <a href="./index.html#about" class="nav-link-mobile">About Us</a>
+                <a target="_blank" class="nav-link-mobile" href="./Courses/FSD.html"><b>Saredufy Launchpad</b></a>
+                <a href="./index.html#courses" class="nav-link-mobile">Trainings & Internships</a>
+                <a href="./index.html#events" class="nav-link-mobile">Events & Workshops</a>
+                <a href="./index.html#projects" class="nav-link-mobile">Projects</a>
+                <a href="./index.html#pricing" class="nav-link-mobile">Pricing</a>
+                <a href="./index.html#reviews" class="nav-link-mobile">Reviews</a>
+                <a href="./index.html#founder" class="nav-link-mobile">Directors</a>
+                <a href="./index.html#contact" class="nav-link-mobile">Contact</a>
+                <a target="_blank" href="https://mwc2k23-24.saredufywpa.in/" class="nav-link-mobile">History</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Course Section Header -->
+    <section class="courses-hero">
+        <div class="container">
+            <h1>Our Specialized Tech Programs</h1>
+            <p>Industry-aligned training curriculums designed to build master developers, cyber security experts, and AI practitioners. Find your path to success.</p>
+
+            <div class="filter-controls">
+                <!-- Live Search -->
+                <div class="search-wrapper">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" id="courseSearch" class="search-input" placeholder="Search for courses, technologies, or keywords...">
+                </div>
+
+                <!-- Filters -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All Programs</button>
+                    <button class="filter-tab" data-filter="fullstack">Full Stack Development</button>
+                    <button class="filter-tab" data-filter="advanced">Advanced Technologies</button>
+                    <button class="filter-tab" data-filter="shortterm">Short-Term & Readiness</button>
+                    <button class="filter-tab" data-filter="1month">1-Month Core Programs</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtered Courses Grid -->
+    <section class="courses-listing">
+        <div class="container">
+
+            <!-- Official Pricing Notice Banner -->
+            <!-- <div class="swpa-official-notice" style="margin-bottom: 3rem;">
+                <div class="notice-badge">
+                    <span class="pulse-dot"></span>
+                    Official Announcement
+                </div>
+                <h3 class="notice-title">𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐒𝐖𝐏𝐀 𝐍𝐎𝐓𝐈𝐂𝐄 - Pricing Initiative for 2026</h3>
+                <div class="notice-body">
+                    <p>At <strong>Saredufy Web Plus Academy Private Limited</strong>, our mission has always been to make quality technical education accessible and affordable for every student.</p>
+                    <p>As part of our commitment to empowering aspiring professionals and bridging the gap between education and industry, we are pleased to announce a new initiative.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 Uniform Fee Initiative</h4>
+                        <p class="highlight-text">
+                            Effective from <strong>1st July 2026 until 31st December 2026</strong>, all training programs offered by Saredufy Web Plus Academy Private Limited will be available at a uniform fee of <strong>₹500 per month</strong>.
+                        </p>
+                        <p class="highlight-sub">
+                            This initiative is introduced with the vision of enabling every student, regardless of their financial background, to gain industry-relevant technical skills at an affordable cost.
+                        </p>
+                    </div>
+
+                    <p>This initiative reflects our belief that access to quality education should never be limited by affordability. Through this pricing model, we aim to empower thousands of students with practical skills, hands-on project experience, and career-focused learning opportunities.</p>
+                    <p>We welcome students, academic institutions, trainers, and industry partners to join us in building a stronger, more skilled technology community. Together, we are making quality technical education affordable, accessible, and industry-ready.</p>
+                </div>
+                <div class="notice-footer">
+                    <div class="signature-section">
+                        <span class="issued-by">Issued By</span>
+                        <span class="ceo-name">Hemesh Velumurugan</span>
+                        <span class="ceo-title">Chief Executive Officer (CEO)</span>
+                        <span class="company-name">Saredufy Web Plus Academy Private Limited</span>
+                        <span class="moto">"Empowering Every Student Through Affordable, Industry-Ready Education."</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="courses-display-grid" id="allCoursesGrid">
+
+                <!-- 1. MERN Stack Development -->
+                <div class="course-card" data-category="fullstack" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">6 Months Bootcamp</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="12" rx="10" ry="4.5" />
+                            <ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(60 12 12)" />
+                            <ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(-60 12 12)" />
+                            <circle cx="12" cy="12" r="1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">MERN Stack Development</h3>
+                    <p class="course-desc">
+                        Build highly interactive, production-ready web apps using MongoDB, Express, React, and Node.js.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            6 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Redux Toolkit</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Java Full Stack Development -->
+                <div class="course-card" data-category="fullstack" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">6 Months Bootcamp</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                            <line x1="6" y1="1" x2="6" y2="4" />
+                            <line x1="10" y1="1" x2="10" y2="4" />
+                            <line x1="14" y1="1" x2="14" y2="4" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Java Full Stack Development</h3>
+                    <p class="course-desc">
+                        Build heavy enterprise-level architectures with Spring Boot, Hibernate, microservices, and client-side interfaces.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            6 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Core Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">ReactJS</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Python Full Stack Development -->
+                <div class="course-card" data-category="fullstack" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Bootcamp</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Python Full Stack Development</h3>
+                    <p class="course-desc">
+                        Master server backend architectures, database modeling with Django, and integrate responsive UI features.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <!-- 4. Java + Data Structures & Algorithms -->
+                <div class="course-card" data-category="fullstack" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="5" r="3" />
+                            <circle cx="6" cy="19" r="3" />
+                            <circle cx="18" cy="19" r="3" />
+                            <line x1="12" y1="8" x2="6" y2="16" />
+                            <line x1="12" y1="8" x2="18" y2="16" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Java + Data Structures & Algorithms</h3>
+                    <p class="course-desc">
+                        Develop algorithmic thinking. Master problem-solving techniques, data layouts, and crack coding interviews.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Arrays & Lists</span>
+                        <span class="skill-tag">Binary Trees</span>
+                        <span class="skill-tag">Recursion & DP</span>
+                        <span class="skill-tag">Graph Algorithms</span>
+                        <span class="skill-tag">OOP Concepts</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Cyber Security -->
+                <div class="course-card" data-category="advanced" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Cyber Security</h3>
+                    <p class="course-desc">
+                        Master vulnerability assessments, penetration testing, network configuration scans, and offensive/defensive safety.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Ethical Hacking</span>
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Linux Command Line</span>
+                        <span class="skill-tag">OWASP Top 10</span>
+                        <span class="skill-tag">Kali Linux</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Data Science -->
+                <div class="course-card" data-category="advanced" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                            <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Data Science</h3>
+                    <p class="course-desc">
+                        Analyze massive datasets, implement regressions, structure visualizations, and configure predictive models.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Python & SQL</span>
+                        <span class="skill-tag">Pandas & NumPy</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">Data Plots</span>
+                        <span class="skill-tag">Statistics</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7. Generative AI -->
+                <div class="course-card" data-category="advanced" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Generative AI</h3>
+                    <p class="course-desc">
+                        Build intelligent software pipelines. Learn API engineering with OpenAI, vector databases, and multi-agent AI scripts.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">LLM Integration</span>
+                        <span class="skill-tag">Prompt Design</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Vector DBs</span>
+                        <span class="skill-tag">Agent Architectures</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. DevOps -->
+                <div class="course-card" data-category="advanced" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">DevOps</h3>
+                    <p class="course-desc">
+                        Automate lifecycle distributions. Build robust delivery pipelines with container configuration tools and scripting.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Jenkins CI/CD</span>
+                        <span class="skill-tag">Git Version Control</span>
+                        <span class="skill-tag">Shell Scripts</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9. Cloud Computing -->
+                <div class="course-card" data-category="advanced" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Cloud Computing</h3>
+                    <p class="course-desc">
+                        Configure scalable server resources. Learn load balancing, data storage buckets, security access rules, and routing.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">AWS Infrastructure</span>
+                        <span class="skill-tag">Server Deployments</span>
+                        <span class="skill-tag">Bucket Storage</span>
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Cloud Auditing</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10. UI/UX Design -->
+                <div class="course-card" data-category="advanced" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">3 Months Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="M12 6v12M6 12h12" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">UI/UX Design</h3>
+                    <p class="course-desc">
+                        Create user-centered visual flows. Build user journeys, prototypes, layouts, and style guidelines using Figma.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Figma Prototyping</span>
+                        <span class="skill-tag">User Mapping</span>
+                        <span class="skill-tag">Visual Schemes</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Layout Frameworks</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11. Frontend Development -->
+                <div class="course-card" data-category="shortterm" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8" />
+                            <path d="M12 17v4" />
+                            <polyline points="9 10 6 12 9 14" />
+                            <polyline points="15 10 18 12 15 14" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Frontend Development</h3>
+                    <p class="course-desc">
+                        Build responsive, structured web pages from scratch using code validation templates and styling sheets.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">HTML5 & CSS3</span>
+                        <span class="skill-tag">JavaScript Basics</span>
+                        <span class="skill-tag">Responsive Styling</span>
+                        <span class="skill-tag">Git Hosting</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12. Aptitude for Interview Training -->
+                <div class="course-card" data-category="shortterm" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">Placement Prep</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Aptitude for Interview Training</h3>
+                    <p class="course-desc">
+                        Acquire the cognitive and reasoning techniques required to excel in tech placement examinations.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1-3 Months
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Quantitative Aptitude</span>
+                        <span class="skill-tag">Logical Reasoning</span>
+                        <span class="skill-tag">Verbal Aptitude</span>
+                        <span class="skill-tag">Interview Tactics</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 13. C Program -->
+                <div class="course-card" data-category="1month" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">C Program</h3>
+                    <p class="course-desc">
+                        Master the core parameters of computer science. Structured logic, data arrays, and memory operations.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">C Syntax</span>
+                        <span class="skill-tag">Pointers</span>
+                        <span class="skill-tag">Structs & Unions</span>
+                        <span class="skill-tag">Memory Logic</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 14. Java Program -->
+                <div class="course-card" data-category="1month" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Java Program</h3>
+                    <p class="course-desc">
+                        Master object-oriented programming principles, compile flows, exceptions, and data arrays.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Classes & Objects</span>
+                        <span class="skill-tag">Inheritance & Polymorphism</span>
+                        <span class="skill-tag">Error Exception</span>
+                        <span class="skill-tag">Collection Basics</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 15. Python Program -->
+                <div class="course-card" data-category="1month" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">Python Program</h3>
+                    <p class="course-desc">
+                        Learn to automate manual routines and parse text inputs using Python's extensive standard libraries.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Python Syntax</span>
+                        <span class="skill-tag">Data Collections</span>
+                        <span class="skill-tag">File Handling</span>
+                        <span class="skill-tag">Standard Scripts</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 16. C++ -->
+                <div class="course-card" data-category="1month" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">C++</h3>
+                    <p class="course-desc">
+                        Build applications with optimized performance constraints. Learn collection algorithms and STL parameters.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">OOPs in C++</span>
+                        <span class="skill-tag">Pointers & Memory</span>
+                        <span class="skill-tag">STL Collections</span>
+                        <span class="skill-tag">Structure Layouts</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 17. SQL -->
+                <div class="course-card" data-category="1month" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" />
+                            <rect x="2" y="14" width="20" height="8" rx="2" />
+                            <line x1="6" y1="6" x2="6" y2="6" />
+                            <line x1="6" y1="18" x2="6" y2="18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">SQL</h3>
+                    <p class="course-desc">
+                        Master table structures, query commands, transaction management, data schemas, and relational indexes.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">Joins & Queries</span>
+                        <span class="skill-tag">Aggregation Filters</span>
+                        <span class="skill-tag">Indexes</span>
+                        <span class="skill-tag">Schema Design</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 18. NoSQL -->
+                <div class="course-card" data-category="1month" data-color="primary">
+                    <div class="course-icon course-icon-primary">
+                        <span class="launch-course-soon">1 Month Program</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" />
+                            <rect x="2" y="14" width="20" height="8" rx="2" />
+                            <line x1="6" y1="6" x2="6" y2="6" />
+                            <line x1="6" y1="18" x2="6" y2="18" />
+                        </svg>
+                    </div>
+                    <h3 class="course-title">NoSQL</h3>
+                    <p class="course-desc">
+                        Understand document databases. Master query aggregation pipelines, object formatting, and clustering profiles.
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            1 Month
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Live Training
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                            Online Mode
+                        </span>
+                        <span class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                            Certification
+                        </span>
+                    </div>
+                    <div class="skill-heading">Skills Earned:</div>
+                    <div class="course-skills">
+                        <span class="skill-tag">MongoDB Basics</span>
+                        <span class="skill-tag">JSON Schemas</span>
+                        <span class="skill-tag">Query Aggregation</span>
+                        <span class="skill-tag">High-Volume Scans</span>
+                    </div>
+                    <div class="course-footer">
+                        <div>
+                            <span class="course-price text-gradient">₹500</span>
+                            <b style="margin-left: 5px;">/month</b>
+                        </div>
+                        <a target="_blank" href="https://forms.gle/vReX1SH3bkT4gS3p7">
+                            <button class="btn btn-gradient">Enroll Now</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- No Results Card -->
+                <div class="no-results" id="noResultsCard">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3>No Courses Found</h3>
+                    <p>We couldn't find any courses matching your search criteria. Try a different search term or category.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img height="150" src="./assets/logo.png" alt="SWPA Logo">
+                        <div class="logo-text logo-text-footer">
+                            <img height="150" src="./assets/swpa.png" alt="SWPA Logo Text">
+                        </div>
+                    </div>
+                    <p align="center">CIN - U85307AP2024PTC116844</p>
+                    <p class="footer-desc">
+                        Empowering the next generation of tech professionals with industry-ready skills
+                        through hands-on training and projects.
+                    </p>
+                    <div class="social-links">
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=61561544652969&mibextid=ZbWKwL"
+                            class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/saredufywpa.in" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a target="_blank"
+                            href="https://www.linkedin.com/company/saredufy-web-plus-academy-private-limited/"
+                            class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@SaredufyWebPlusAcademy" class="social-link"
+                            aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-links">
+                    <h4>Trainings</h4>
+                    <ul>
+                        <li><a href="./index.html#courses">Full Stack Development</a></li>
+                        <li><a href="./index.html#courses">Frontend Development</a></li>
+                        <li><a href="./index.html#courses">Backend Development</a></li>
+                        <li><a href="./index.html#courses">UI / UX Designing</a></li>
+                        <li><a href="./index.html#courses">Cyber Security</a></li>
+                        <li><a href="./index.html#courses">Ai / Machine Learning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="./index.html#pricing">Static Website Development</a></li>
+                        <li><a href="./index.html#pricing">Full Stack Development</a></li>
+                        <li><a href="./index.html#pricing">Website Maintenance</a></li>
+                        <li><a href="./index.html#contact">Custom Projects</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="./index.html#home">Home</a></li>
+                        <li><a href="./index.html#about">About Us</a></li>
+                        <li><a href="./index.html#projects">Our Projects</a></li>
+                        <li><a href="./index.html#founder">Directors</a></li>
+                        <li><a href="./index.html#reviews">Reviews</a></li>
+                        <li><a href="./index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255, 166, 0, 0.5); margin-top: 1rem;">
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Saredufy Web Plus Academy Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="./privacy.html" target="_blank">Privacy Policy</a>
+                    <a href="./Terms.html" target="_blank">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Filters and Search Script -->
+    <script>
+        // Navbar mobile toggle handler
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMobile = document.getElementById('navMobile');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMobile.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking on a link
+        document.querySelectorAll('.nav-link-mobile').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMobile.classList.remove('active');
+            });
+        });
+
+        // Filtering and Live Search
+        const searchInput = document.getElementById('courseSearch');
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const courseCards = document.querySelectorAll('.course-card');
+        const noResultsCard = document.getElementById('noResultsCard');
+
+        let activeFilter = 'all';
+        let searchQuery = '';
+
+        function filterCourses() {
+            let matchesCount = 0;
+
+            courseCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('.course-title').textContent.toLowerCase();
+                const desc = card.querySelector('.course-desc').textContent.toLowerCase();
+                
+                // Collect all skills of this card to search against
+                const skills = Array.from(card.querySelectorAll('.skill-tag'))
+                                    .map(tag => tag.textContent.toLowerCase())
+                                    .join(' ');
+
+                const matchesCategory = activeFilter === 'all' || category === activeFilter;
+                const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery) || skills.includes(searchQuery);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = '';
+                    matchesCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show "no results" if no courses are matched
+            if (matchesCount === 0) {
+                noResultsCard.style.display = 'block';
+            } else {
+                noResultsCard.style.display = 'none';
+            }
+        }
+
+        // Search Input listener
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            filterCourses();
+        });
+
+        // Filter tabs listener
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                activeFilter = tab.getAttribute('data-filter');
+                filterCourses();
+            });
+        });
+    </script>
+</body>
+
+</html>
